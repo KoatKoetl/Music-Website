@@ -19,6 +19,7 @@ export default {
     extend: {
       fontFamily: {
         DMSerifDisplay: ["DM Serif Display", "serif"],
+        Rubik: ["Rubik", "sans-serif"],
       },
       dropShadow: {
         "font-shadow-2": "0 2px 2px rgba(0,0,0,0.8)",
@@ -27,6 +28,7 @@ export default {
       },
       boxShadow: {
         "12xl": "0 0 150px rgb(255 255 255 / 0.5)",
+        poster: "10px 10px 5px rgb(0 0 0 / 0.5)",
       },
       screens: {
         lil: "475px",
