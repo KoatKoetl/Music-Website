@@ -1,4 +1,4 @@
-import BandSection from "./components/bandSection";
+import BandSection from "./components/BandSection/bandSection";
 import Header from "./components/header";
 import Main from "./components/main";
 
