@@ -35,6 +35,9 @@ export default {
         "3xl": "1920px",
         "4xl": "2560px",
       },
+      gridTemplateColumns: {
+        "2x1": "minmax(400px, 2fr), minmax(200px,1fr)",
+      },
       fontSize: {
         "4xl": ["2.25rem", "2.75rem"],
         "5xl": ["3rem", "3.75rem"],
