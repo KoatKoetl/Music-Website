@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Suspense } from "react";
-import LazyLoadedImage from "../LazyLoad/lazyLoadImage";
+import LazyLoadedImage from "../../LazyLoad/lazyLoadImage";
 
 const BandMembersPhoto = ({ imageProps }) => {
   return (

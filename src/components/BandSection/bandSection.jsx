@@ -1,4 +1,4 @@
-import Poster from "./poster";
+import Poster from "./Poster/poster";
 
 const BandSection = () => {
   return (

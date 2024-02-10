@@ -1,7 +1,7 @@
 import { CarouselItem } from "@/components/ui/carousel";
 import PropTypes from "prop-types";
 import React, { Suspense } from "react";
-import LazyLoadedImage from "../LazyLoad/lazyLoadImage";
+import LazyLoadedImage from "../../LazyLoad/lazyLoadImage";
 
 const CarouselItems = ({ albumCoverURLs }) => {
   // Check on empty url array
