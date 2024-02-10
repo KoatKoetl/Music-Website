@@ -40,7 +40,7 @@ const Main = () => {
   }, []);
 
   const imageProps = {
-    url: guitarImageLogo,
+    src: guitarImageLogo,
     alt: "photo of guitar in black and white from top of freatboard",
     styles:
       "background-image animate-spin-slow absolute left-0 top-0 h-full w-full rounded-full bg-cover bg-center opacity-0",
