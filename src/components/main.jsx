@@ -62,9 +62,7 @@ const Main = () => {
             <span className="letters">of my favorite music</span>
           </span>
         </h2>
-        <Suspense fallback={<div className="text-lg">Loading...</div>}>
-          <LazyLoadedImage {...imageProps} />
-        </Suspense>
+        <LazyLoadedImage {...imageProps} />
       </div>
     </main>
   );
