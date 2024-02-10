@@ -1,7 +1,6 @@
 import anime from "animejs";
 import { Suspense, lazy, useEffect } from "react";
 import guitarImageLogo from "/src/assets/images/Main/guitarStartLogo.webp";
-import loadingImage from "/src/assets/images/Main/loading.gif";
 
 const LazyLoadedImage = lazy(() => import("./LazyLoad/lazyLoadImage.jsx"));
 
@@ -34,18 +33,6 @@ const animateBackgroundAppear = () => {
   });
 };
 
-const MissingImage = () => {
-  return (
-    <>
-      <img
-        src={loadingImage}
-        alt="Image is loading"
-        className="background-image absolute left-1/2 top-[70%] size-10 -translate-x-1/2 animate-spin-slow rounded-full bg-cover bg-center"
-      />
-    </>
-  );
-};
-
 const Main = () => {
   useEffect(() => {
     animateTyping();
@@ -75,7 +62,7 @@ const Main = () => {
             <span className="letters">of my favorite music</span>
           </span>
         </h2>
-        <Suspense fallback={<MissingImage />}>
+        <Suspense fallback={<div className="text-lg">Loading...</div>}>
           <LazyLoadedImage {...imageProps} />
         </Suspense>
       </div>
