@@ -11,7 +11,7 @@ const Header = () => {
 
 export default Header;
 
-function NavBar({}) {
+function NavBar() {
   return (
     <nav>
       <ul className="flex h-full gap-10">
@@ -25,7 +25,7 @@ function NavBar({}) {
   );
 }
 
-function LogoImage({}) {
+function LogoImage() {
   return (
     <div className="grid items-center justify-center">
       <img src="" alt="" width={40} height={40} className="" />
