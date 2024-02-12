@@ -1,5 +1,5 @@
 import anime from "animejs";
-import { Suspense, lazy, useEffect } from "react";
+import { lazy, useEffect } from "react";
 import guitarImageLogo from "/src/assets/images/Main/guitarStartLogo.webp";
 
 const LazyLoadedImage = lazy(() => import("./LazyLoad/lazyLoadImage.jsx"));
