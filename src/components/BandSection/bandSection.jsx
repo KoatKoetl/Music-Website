@@ -4,8 +4,10 @@ import PlayList from "./playList";
 const BandSection = () => {
   return (
     <section className="font-Rubik">
-      <Poster />
-      <PlayList />
+      <div className="flex flex-wrap bg-dark-pink px-16 py-10">
+        <Poster />
+        <PlayList />
+      </div>
     </section>
   );
 };
