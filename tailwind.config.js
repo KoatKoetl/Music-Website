@@ -32,6 +32,7 @@ export default {
       },
       screens: {
         lil: "475px",
+        "screen-1400": "1400px",
         "3xl": "1920px",
         "4xl": "2560px",
       },
