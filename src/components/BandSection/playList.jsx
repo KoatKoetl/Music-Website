@@ -129,60 +129,63 @@ const PlayList = () => {
       <h3 className="text-center text-4xl font-semibold">
         Short playlist example
       </h3>
-      <ul className="grid max-h-[770px] overflow-scroll">
+      <ul className="grid max-h-[770px] gap-4 overflow-scroll">
         {playList.map((track, index) => (
           <li
             key={track.id}
-            className="flex flex-wrap gap-2 rounded-sm p-2 hover:bg-dark-gray hover:shadow-xl"
+            className="rounded-sm hover:bg-dark-gray hover:shadow-xl"
           >
-            <div className="screen-1400:size-24 relative size-20">
-              <span className="absolute left-1 z-10 font-bold">
-                {index + 1}
-              </span>
-              <Suspense
-                fallback={
-                  <div className="relative z-0 flex h-full w-full items-center justify-center">
-                    Loading...
-                  </div>
-                }
-              >
-                <LazyLoadedImage
-                  src={track.album.cover}
-                  alt={"Song " + track.title + " cover image"}
-                  styles={"relative z-0 h-full w-full text-sm text-center"}
-                />
-              </Suspense>
+            <div className="flex flex-wrap gap-4 px-2 py-0.5">
+              <div className="screen-1400:size-24 relative size-20">
+                <span className="absolute left-1 z-10 font-bold">
+                  {index + 1}
+                </span>
+                <Suspense
+                  fallback={
+                    <div className="relative z-0 flex h-full w-full items-center justify-center">
+                      Loading...
+                    </div>
+                  }
+                >
+                  <LazyLoadedImage
+                    src={track.album.cover}
+                    alt={"Song " + track.title + " cover image"}
+                    styles={"relative z-0 h-full w-full text-sm text-center"}
+                  />
+                </Suspense>
+              </div>
+              <div className="flex flex-col justify-center">
+                <h5 className="screen-1400:text-2xl text-lg font-semibold">
+                  {track.title}
+                </h5>
+                <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
+                  <span className="font-semibold">Artist name:</span>{" "}
+                  {track.artist.name}
+                </h6>
+                <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
+                  <span className="font-semibold">Album:</span>{" "}
+                  {track.album.title}
+                </h6>
+              </div>
+              <div className="flex min-w-[200px] flex-1 items-center justify-center">
+                <a
+                  href={track.link}
+                  className="whitespace-break-spaces text-center hover:drop-shadow-font-shadow-2"
+                >
+                  <h5>
+                    <strong>Deezer</strong>
+                    <br />
+                    Click here and listen full song
+                  </h5>
+                </a>
+              </div>
             </div>
-            <div className="flex flex-col justify-center">
-              <h5 className="screen-1400:text-2xl text-lg font-semibold">
-                {track.title}
-              </h5>
-              <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
-                <span className="font-semibold">Artist name:</span>{" "}
-                {track.artist.name}
-              </h6>
-              <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
-                <span className="font-semibold">Album:</span>{" "}
-                {track.album.title}
-              </h6>
-            </div>
+
             <div className="flex flex-col items-center justify-center gap-2">
-              <span>Song preview</span>
-              <audio controls>
+              {/* <span>Song preview</span> */}
+              <audio controls className="audio-player w-full px-2">
                 <source src={track.preview} type="audio/ogg" />
               </audio>
-            </div>
-            <div className="flex min-w-[200px] flex-1 items-center justify-center">
-              <a
-                href={track.link}
-                className="whitespace-break-spaces text-center hover:drop-shadow-font-shadow-2"
-              >
-                <h5>
-                  <strong>Deezer</strong>
-                  <br />
-                  Click here and listen full song
-                </h5>
-              </a>
             </div>
           </li>
         ))}
