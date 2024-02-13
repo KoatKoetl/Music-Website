@@ -34,14 +34,8 @@ const Albums = () => {
         <CarouselContent>
           <CarouselItems albumCoverURLs={albumCoverURLs} />
         </CarouselContent>
-        <CarouselPrevious
-          variant="ghost"
-          className="md:left-[25%] md:top-[115%]"
-        />
-        <CarouselNext
-          variant="ghost"
-          className="md:right-[25%] md:top-[115%]"
-        />
+        <CarouselPrevious variant="ghost" className="left-[25%] top-[115%]" />
+        <CarouselNext variant="ghost" className="right-[25%] top-[115%]" />
       </Carousel>
     </div>
   );

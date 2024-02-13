@@ -1,6 +1,6 @@
 const BandMembersList = () => {
   return (
-    <ul className="w-[400px] p-4">
+    <ul className="min-w-[300px] max-w-[400px] flex-1 p-4">
       <h4 className="mb-2 text-center text-xl font-semibold">Band Members</h4>
       <li>
         <span className="font-semibold">Vocalist:</span> Viktor Robertovich Tsoi
