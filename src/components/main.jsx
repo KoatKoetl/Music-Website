@@ -1,8 +1,6 @@
 import anime from "animejs";
-import { lazy, useEffect } from "react";
+import { useEffect } from "react";
 import guitarImageLogo from "/src/assets/images/Main/guitarStartLogo.webp";
-
-const LazyLoadedImage = lazy(() => import("./LazyLoad/lazyLoadImage.jsx"));
 
 const animateTyping = () => {
   let textWrapper = Array.from(document.querySelectorAll(".text-wrapper"));
@@ -39,13 +37,6 @@ const Main = () => {
     animateBackgroundAppear();
   }, []);
 
-  const imageProps = {
-    src: guitarImageLogo,
-    alt: "photo of guitar in black and white from top of freatboard",
-    styles:
-      "background-image animate-spin-slow absolute left-0 top-0 h-full w-full rounded-full bg-cover bg-center opacity-0",
-  };
-
   return (
     <main className="mb-20 flex min-h-[90svh] items-center justify-center">
       <div className="relative flex h-[250px] w-[260px] flex-col items-center justify-center overflow-hidden rounded-full p-10 text-center font-DMSerifDisplay transition-all duration-500 ease-in-out hover:shadow-12xl lil:h-[330px] lil:w-[345px] sm:h-[425px] sm:w-[450px] md:size-[650px] lg:size-[550px] xl:size-[650px] 2xl:size-[800px] 4xl:size-[1000px]">
@@ -62,7 +53,11 @@ const Main = () => {
             <span className="letters">of my favorite music</span>
           </span>
         </h2>
-        <LazyLoadedImage {...imageProps} />
+        <img
+          src={guitarImageLogo}
+          alt="photo of guitar in black and white from top of freatboard"
+          className="background-image absolute left-0 top-0 h-full w-full animate-spin-slow rounded-full bg-cover bg-center opacity-0"
+        />
       </div>
     </main>
   );
