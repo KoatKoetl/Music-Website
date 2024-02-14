@@ -138,11 +138,13 @@ const SongList = () => {
               </span>
               <LazyLoadImage
                 effect="blur"
-                src={"/src/assets/images/band-KINO/albumCover.jpg"}
+                key={track.id}
+                src={track.album.cover}
                 alt={"Song " + track.title + " cover image"}
                 styles={"relative z-0 h-full w-full text-sm text-center"}
                 width={96}
                 height={96}
+                threshold={300}
               />
             </div>
             <div className="flex flex-col justify-center">
