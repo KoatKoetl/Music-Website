@@ -12,7 +12,7 @@ const Albums = () => {
   // Get all album images links in one array
   const albumCoverURLs = Object.values(
     import.meta.glob(
-      "@assets/images/KINO-Albums/*.{png,jpg,jpeg,PNG,JPEG,webp}",
+      "@assets/images/band-KINO/KINO-Albums/*.{png,jpg,jpeg,PNG,JPEG,webp}",
       {
         eager: true,
         as: "url",
