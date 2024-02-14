@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import API_Call from "/src/utils/API/Deezer_API.jsx";
+import useAPI from "../../useDeezerAPI";
 
 // const mockAPI_DATA = [
 //   {
@@ -86,28 +85,10 @@ import API_Call from "/src/utils/API/Deezer_API.jsx";
 // ];
 
 const SongList = () => {
-  const [playList, setPlayList] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // Use deezer API
+  const { playList, loading } = useAPI("playlist/10674002782");
 
-  useEffect(() => {
-    const fetchPlaylist = async () => {
-      try {
-        const data = await API_Call("playlist/10674002782");
-        console.log(data.data);
-        setPlayList(data.data);
-      } catch (err) {
-        console.log(err);
-        throw err;
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 0);
-      }
-    };
-
-    fetchPlaylist();
-  }, []);
-
+  // Check onLoading
   if (loading) {
     return (
       <div className="flex flex-1 items-center justify-center p-6">
@@ -116,6 +97,7 @@ const SongList = () => {
     );
   }
 
+  // Check on missing data
   if (!playList || playList.length === 0) {
     return (
       <div className="flex flex-1 items-center justify-center p-6">
