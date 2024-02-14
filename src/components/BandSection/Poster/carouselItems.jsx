@@ -1,7 +1,8 @@
 import { CarouselItem } from "@/components/ui/carousel";
 import PropTypes from "prop-types";
-import React, { Suspense } from "react";
-import LazyLoadedImage from "../../LazyLoad/lazyLoadImage";
+import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const CarouselItems = ({ albumCoverURLs }) => {
   // Check on empty url array
@@ -29,22 +30,15 @@ const CarouselItems = ({ albumCoverURLs }) => {
             className="flex h-[150px] w-[194px] justify-center text-center"
             key={index}
           >
-            <Suspense
-              fallback={
-                <div className="flex items-center justify-center">
-                  Loading...
-                </div>
-              }
-            >
-              <LazyLoadedImage
-                key={albumTitle}
-                src={link}
-                alt={`KINO` + " - " + albumTitle}
-                width={150}
-                height={150}
-                title={albumTitle}
-              />
-            </Suspense>
+            <LazyLoadImage
+              key={albumTitle}
+              src={link}
+              alt={`KINO` + " - " + albumTitle}
+              width={150}
+              height={150}
+              title={albumTitle}
+              effect="blur"
+            />
           </CarouselItem>
         );
       })}

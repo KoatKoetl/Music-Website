@@ -1,25 +1,24 @@
-import PropTypes from "prop-types";
-import { Suspense } from "react";
-import LazyLoadedImage from "../../LazyLoad/lazyLoadImage";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import bandPhoto from "/src/assets/images/band-KINO/band-KINO.webp";
 
-const BandMembersPhoto = ({ imageProps }) => {
+const BandMembersPhoto = () => {
+  // Band Members image props
+  const bandPhotoProps = {
+    src: bandPhoto,
+    alt: "photo in black and white of band KINO",
+    styles: "justify-self-center rounded-lg",
+    effect: "blur",
+    placeholderSrc: "band-KINO",
+    width: 600,
+    height: 370,
+  };
+
   return (
-    <div className="grid">
-      <Suspense
-        fallback={
-          <div className="flex h-[250px] w-[600px] items-center justify-center">
-            Loading...
-          </div>
-        }
-      >
-        <LazyLoadedImage {...imageProps} />
-      </Suspense>
+    <div className="grid items-center justify-center">
+      <LazyLoadImage {...bandPhotoProps} />
     </div>
   );
-};
-
-BandMembersPhoto.propTypes = {
-  imageProps: PropTypes.object,
 };
 
 export default BandMembersPhoto;
