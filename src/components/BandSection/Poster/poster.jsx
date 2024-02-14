@@ -1,17 +1,8 @@
 import Albums from "./albumsCarousel";
 import BandMembersList from "./bandMembersList";
 import BandMembersPhoto from "./bandMembersPhoto";
-import bandPhoto from "/src/assets/images/band-KINO.webp";
 
 const Poster = () => {
-  // Band Members image props
-  const bandPhotoProps = {
-    src: bandPhoto,
-    alt: "photo in black and white of band KINO",
-    styles: "justify-self-center rounded-lg",
-    width: 600,
-  };
-
   return (
     <div className="max-h-[850px] max-w-[650px] flex-1 bg-dark-gray p-4 shadow-poster">
       <a href="https://en.wikipedia.org/wiki/Kino_(band)" target="blank">
@@ -19,7 +10,7 @@ const Poster = () => {
           К<span className="font-normal">И</span>НО
         </h3>
       </a>
-      <BandMembersPhoto imageProps={bandPhotoProps} />
+      <BandMembersPhoto />
       <div className="flex flex-wrap justify-center md:justify-normal">
         <BandMembersList />
         <Albums />
