@@ -107,7 +107,7 @@ const SongList = () => {
   }
 
   return (
-    <ul className="grid max-h-[770px] gap-4 overflow-scroll">
+    <ul className="grid max-h-[770px] gap-4 overflow-x-hidden overflow-y-scroll">
       {playList.map((track, index) => (
         <li
           key={track.id}
