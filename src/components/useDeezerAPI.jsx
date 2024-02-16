@@ -9,7 +9,6 @@ const useAPI = (endpoint) => {
     const fetchPlaylist = async () => {
       try {
         const data = await API_Call(endpoint);
-        console.log(data.data);
         setPlayList(data.data);
       } catch (err) {
         console.log(err);
@@ -17,7 +16,7 @@ const useAPI = (endpoint) => {
       } finally {
         setTimeout(() => {
           setLoading(false);
-        }, 0);
+        }, 1000);
       }
     };
 
