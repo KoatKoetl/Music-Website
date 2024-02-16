@@ -71,6 +71,23 @@
     @apply border-border;
   }
   body {
-    @apply bg-dark-gray text-foreground text-white;
+    @apply relative bg-dark-gray text-foreground text-white;
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cacaca;
 }
