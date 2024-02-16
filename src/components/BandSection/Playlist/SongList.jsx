@@ -1,5 +1,6 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useEffect, useState } from "react";
 import useAPI from "../../useDeezerAPI";
+import ListItem from "./ListItem";
 
 // const mockAPI_DATA = [
 //   {
@@ -85,8 +86,16 @@ import useAPI from "../../useDeezerAPI";
 // ];
 
 const SongList = () => {
-  // Use deezer API
   const { playList, loading } = useAPI("playlist/10674002782");
+  const [renderedItems, setRenderedItems] = useState(1);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRenderedItems((prev) => Math.min(prev + 1, playList.length));
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [playList]);
 
   // Check onLoading
   if (loading) {
@@ -108,61 +117,8 @@ const SongList = () => {
 
   return (
     <ul className="grid max-h-[770px] gap-4 overflow-x-hidden overflow-y-scroll">
-      {playList.map((track, index) => (
-        <li
-          key={track.id}
-          className="rounded-sm hover:bg-dark-gray hover:shadow-xl"
-        >
-          <div className="flex flex-wrap gap-4 px-2 py-0.5">
-            <div className="relative size-20 screen-1400:size-24">
-              <span className="absolute left-1 z-10 font-bold">
-                {index + 1}
-              </span>
-              <LazyLoadImage
-                effect="blur"
-                key={track.id}
-                src={track.album.cover}
-                alt={"Song " + track.title + " cover image"}
-                styles={"relative z-0 h-full w-full text-sm text-center"}
-                width={96}
-                height={96}
-                threshold={300}
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h5 className="text-lg font-semibold screen-1400:text-2xl">
-                {track.title}
-              </h5>
-              <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
-                <span className="font-semibold">Artist name:</span>{" "}
-                {track.artist.name}
-              </h6>
-              <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
-                <span className="font-semibold">Album:</span>{" "}
-                {track.album.title}
-              </h6>
-            </div>
-            <div className="flex min-w-[200px] flex-1 items-center justify-center">
-              <a
-                href={track.link}
-                className="whitespace-break-spaces text-center hover:drop-shadow-font-shadow-2"
-              >
-                <h5>
-                  <strong>Deezer</strong>
-                  <br />
-                  Click here and listen full song
-                </h5>
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-center gap-2">
-            {/* <span>Song preview</span> */}
-            <audio controls className="audio-player w-full px-2">
-              <source src={track.preview} type="audio/ogg" />
-            </audio>
-          </div>
-        </li>
+      {playList.slice(0, renderedItems).map((song, index) => (
+        <ListItem key={song.id} index={index} song={song} />
       ))}
     </ul>
   );
