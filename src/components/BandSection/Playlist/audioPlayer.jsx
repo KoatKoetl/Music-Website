@@ -2,50 +2,57 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 const useAudioPlayer = (src) => {
-  // Create a new Audio html element
   const [audio] = useState(new Audio(src));
-
-  // All states of the Audio element
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Event listener to get the current time after render
-    const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
-    };
+    const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
 
-    // Event listener to get the duration after render
-    const handleDurationChange = () => {
-      setDuration(audio.duration);
-    };
+    const handleDurationChange = () => setDuration(audio.duration);
 
-    // Event listener to get the volume after render
-    const handleVolumeChange = () => {
-      setVolume(audio.volume);
-    };
+    const handleVolumeChange = () => setVolume(audio.volume);
 
     const handleEnded = () => {
-      // Restart the audio when it reaches the end
       audio.currentTime = 0;
       setIsPlaying(false);
     };
 
-    // Add all event listeners to the audio element
+    const handleLoadStart = () => {
+      setIsLoading(true);
+      setError(null);
+    };
+
+    const handleLoadedData = () => {
+      setIsLoading(false);
+    };
+
+    const handleError = (event) => {
+      setIsLoading(false);
+      setError(event.message || "Failed to load audio");
+    };
+
     audio.addEventListener("timeupdate", handleTimeUpdate);
     audio.addEventListener("durationchange", handleDurationChange);
     audio.addEventListener("volumechange", handleVolumeChange);
     audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("loadstart", handleLoadStart);
+    audio.addEventListener("loadeddata", handleLoadedData);
+    audio.addEventListener("error", handleError);
 
-    // Remove all event listeners from the audio element after getting all the data
     return () => {
       audio.removeEventListener("timeupdate", handleTimeUpdate);
       audio.removeEventListener("durationchange", handleDurationChange);
       audio.removeEventListener("volumechange", handleVolumeChange);
       audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("loadstart", handleLoadStart);
+      audio.removeEventListener("loadeddata", handleLoadedData);
+      audio.removeEventListener("error", handleError);
     };
   }, [audio]);
 
@@ -86,6 +93,8 @@ const useAudioPlayer = (src) => {
     duration,
     isMuted,
     volume,
+    isLoading,
+    error,
     playPause,
     seek,
     mute,
@@ -101,6 +110,8 @@ const AudioPlayer = ({ src }) => {
     duration,
     isMuted,
     volume,
+    isLoading,
+    error,
     playPause,
     seek,
     mute,
@@ -113,28 +124,36 @@ const AudioPlayer = ({ src }) => {
         <button
           className="rounded-sm bg-dark-pink px-2 py-1"
           onClick={playPause}
+          disabled={isLoading}
         >
-          {isPlaying ? "Pause" : "Play"}
+          {isLoading ? "Loading..." : isPlaying ? "Pause" : "Play"}
         </button>
         <input
           type="range"
           value={currentTime}
           max={duration}
           onChange={(e) => seek(e.target.value)}
+          disabled={isLoading}
           className="flex-1"
         />
         <span>
           {formatTime(currentTime)}/{formatTime(duration)}
         </span>
-        <button onClick={mute}>{isMuted ? "Unmute" : "Mute"}</button>
+        <button onClick={mute} disabled={isLoading}>
+          {isMuted ? "Unmute" : "Mute"}
+        </button>
         <input
           type="range"
           value={volume}
           max={1}
           step={0.01}
           onChange={(e) => setVolumeLevel(e.target.value)}
+          disabled={isLoading}
         />
       </div>
+      {error && (
+        <div className="p-2 font-bold text-red-500 ">Error - {error}</div>
+      )}
     </>
   );
 };
