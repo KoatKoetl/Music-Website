@@ -1,5 +1,5 @@
+import PlayList from "./Playlist/playList";
 import Poster from "./Poster/poster";
-import PlayList from "./playList";
 
 const BandSection = () => {
   return (

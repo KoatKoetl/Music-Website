@@ -1,5 +1,5 @@
 import "react-lazy-load-image-component/src/effects/blur.css";
-import SongList from "./Playlist/SongList";
+import SongList from "./SongList";
 
 const PlayList = () => {
   return (
