@@ -50,7 +50,7 @@ const FullSongLink = ({ song }) => {
     <div className="flex min-w-[200px] flex-1 items-center justify-center">
       <a
         href={song.link}
-        className="whitespace-break-spaces text-center hover:drop-shadow-font-shadow-2"
+        className="whitespace-break-spaces text-center opacity-80 hover:opacity-100 hover:drop-shadow-font-shadow-2"
         target="blank"
       >
         <h5>
@@ -69,7 +69,7 @@ FullSongLink.propTypes = {
 
 const ListItem = ({ song, index }) => {
   return (
-    <li className="rounded-sm hover:bg-dark-gray hover:shadow-xl">
+    <li className="rounded-sm border-l-4  border-r-4 border-transparent p-2 hover:border-dark-gray">
       <div className="flex flex-wrap gap-4 px-2 py-0.5">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />
