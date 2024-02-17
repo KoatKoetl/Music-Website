@@ -122,7 +122,7 @@ const AudioPlayer = ({ src }) => {
     <>
       <div className="mx-1 flex items-center gap-2 pb-2 pt-1">
         <button
-          className="rounded-sm bg-dark-pink px-2 py-1"
+          className="rounded-sm bg-dark-gray px-4 py-1"
           onClick={playPause}
           disabled={isLoading}
         >
@@ -131,10 +131,11 @@ const AudioPlayer = ({ src }) => {
         <input
           type="range"
           value={currentTime}
+          step={0.1}
           max={duration}
           onChange={(e) => seek(e.target.value)}
           disabled={isLoading}
-          className="flex-1"
+          className="input-KINO flex-1"
         />
         <span>
           {formatTime(currentTime)}/{formatTime(duration)}
@@ -149,6 +150,7 @@ const AudioPlayer = ({ src }) => {
           step={0.01}
           onChange={(e) => setVolumeLevel(e.target.value)}
           disabled={isLoading}
+          className="input-KINO"
         />
       </div>
       {error && (
