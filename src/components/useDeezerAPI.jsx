@@ -12,7 +12,6 @@ const useAPI = (endpoint) => {
         setPlayList(data.data);
       } catch (err) {
         console.log(err);
-        throw err;
       } finally {
         setTimeout(() => {
           setLoading(false);
