@@ -120,13 +120,18 @@ const AudioPlayer = ({ src }) => {
 
   return (
     <>
-      <div className="mx-1 flex items-center gap-2 pb-2 pt-1">
+      {error && (
+        <div className="flex items-center justify-center rounded-full text-xl font-semibold text-white">
+          {error}!
+        </div>
+      )}
+      <div className="flex flex-1 items-center gap-2">
         <button
           className="rounded-sm bg-dark-gray px-4 py-1"
           onClick={playPause}
           disabled={isLoading}
         >
-          {isLoading ? "Loading..." : isPlaying ? "Pause" : "Play"}
+          {isLoading ? "Loading..." : isPlaying ? "||" : ">"}
         </button>
         <input
           type="range"
@@ -153,9 +158,6 @@ const AudioPlayer = ({ src }) => {
           className="input-KINO"
         />
       </div>
-      {error && (
-        <div className="p-2 font-bold text-red-500 ">Error - {error}</div>
-      )}
     </>
   );
 };
@@ -170,4 +172,35 @@ AudioPlayer.propTypes = {
   src: PropTypes.string,
 };
 
-export default AudioPlayer;
+const LazyAudioPlayer = ({ src }) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsIntersecting(true);
+          }
+        });
+      },
+      { threshold: 0.5 }, // Adjust the threshold as needed
+    );
+
+    observer.observe(document.getElementById(`lazy-audio-${src}`));
+
+    return () => observer.disconnect();
+  }, [src]);
+
+  return (
+    <div id={`lazy-audio-${src}`} className="flex flex-1 flex-wrap">
+      {isIntersecting && <AudioPlayer src={src} />}
+    </div>
+  );
+};
+
+LazyAudioPlayer.propTypes = {
+  src: PropTypes.string,
+};
+
+export default LazyAudioPlayer;
