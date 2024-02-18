@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import useAPI from "../../useDeezerAPI";
 import ListItem from "./ListItem";
 
@@ -87,15 +86,6 @@ import ListItem from "./ListItem";
 
 const SongList = () => {
   const { playList, loading } = useAPI("playlist/10674002782");
-  const [renderedItems, setRenderedItems] = useState(1);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setRenderedItems((prev) => Math.min(prev + 1, playList.length));
-    }, 2000);
-
-    return () => clearInterval(timer);
-  }, [playList]);
 
   // Check onLoading
   if (loading) {
@@ -117,7 +107,7 @@ const SongList = () => {
 
   return (
     <ul className="grid max-h-[770px] gap-4 overflow-x-hidden overflow-y-scroll">
-      {playList.slice(0, renderedItems).map((song, index) => (
+      {playList.map((song, index) => (
         <ListItem key={song.id} index={index} song={song} />
       ))}
     </ul>
