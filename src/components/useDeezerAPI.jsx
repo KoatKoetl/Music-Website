@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import API_Call from "/src/utils/API/Deezer_API.jsx";
+import API_Call from "../utils/API/Deezer_API";
 
 const useAPI = (endpoint) => {
   const [playList, setPlayList] = useState(null);
@@ -13,9 +13,7 @@ const useAPI = (endpoint) => {
       } catch (err) {
         console.log(err);
       } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        setLoading(false);
       }
     };
 
