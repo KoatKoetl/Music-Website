@@ -1,20 +1,18 @@
 import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import AudioPlayer from "./audioPlayer";
+import LazyAudioPlayer from "./audioPlayer";
 
 const AlbumCover = ({ index, song }) => {
   return (
-    <div className="relative size-20 screen-1400:size-24">
-      <span className="absolute left-1 z-10 font-bold">{index + 1}</span>
+    <div className="relative mr-2 grid size-16 items-center justify-center">
+      <span className="absolute left-1 top-0 z-10 font-bold">{index + 1}</span>
       <LazyLoadImage
         effect="blur"
         key={song.id}
         src={song.album.cover}
         alt={"Song " + song.title + " cover image"}
-        styles={"relative z-0 h-full w-full text-sm text-center"}
-        width={96}
-        height={96}
         threshold={300}
+        className="rounded-sm"
       />
     </div>
   );
@@ -27,15 +25,10 @@ AlbumCover.propTypes = {
 
 const SongInfo = ({ song }) => {
   return (
-    <div className="flex flex-col justify-center">
-      <h5 className="text-lg font-semibold screen-1400:text-2xl">
-        {song.title}
-      </h5>
-      <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
-        <span className="font-semibold">Artist name:</span> {song.artist.name}
-      </h6>
-      <h6 className="screen-1400:text-md text-sm opacity-80 hover:opacity-100">
-        <span className="font-semibold">Album:</span> {song.album.title}
+    <div className="flex min-w-[250px] max-w-[300px] flex-1 flex-col justify-center">
+      <h5 className="font-semibold">{song.title}</h5>
+      <h6 className="opacity-80 hover:opacity-100">
+        <span className="font-semibold">Band: </span>KINO
       </h6>
     </div>
   );
@@ -47,7 +40,7 @@ SongInfo.propTypes = {
 
 const FullSongLink = ({ song }) => {
   return (
-    <div className="flex min-w-[200px] flex-1 items-center justify-center">
+    <div className="flex items-center justify-center px-4">
       <a
         href={song.link}
         className="whitespace-break-spaces text-center opacity-80 hover:opacity-100 hover:drop-shadow-font-shadow-2"
@@ -56,7 +49,7 @@ const FullSongLink = ({ song }) => {
         <h5>
           <strong>Deezer</strong>
           <br />
-          Click here and listen full song
+          Full song
         </h5>
       </a>
     </div>
@@ -69,14 +62,12 @@ FullSongLink.propTypes = {
 
 const ListItem = ({ song, index }) => {
   return (
-    <li className="rounded-sm border-l-4  border-r-4 border-transparent p-2 hover:border-dark-gray">
-      <div className="flex flex-wrap gap-4 px-2 py-0.5">
+    <li className="rounded-sm ">
+      <div className="flex flex-wrap">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />
         <FullSongLink song={song} />
-      </div>
-      <div>
-        <AudioPlayer src={song.preview} />
+        <LazyAudioPlayer src={song.preview} />
       </div>
     </li>
   );
