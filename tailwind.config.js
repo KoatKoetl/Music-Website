@@ -16,6 +16,17 @@ export default {
         "2xl": "1400px",
       },
     },
+    screens: {
+      lil: "475px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "screen-1400": "1400px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+      "4xl": "2560px",
+    },
     extend: {
       fontFamily: {
         DMSerifDisplay: ["DM Serif Display", "serif"],
@@ -31,10 +42,7 @@ export default {
         poster: "10px 10px 5px rgb(0 0 0 / 0.5)",
       },
       screens: {
-        lil: "475px",
-        "screen-1400": "1400px",
-        "3xl": "1920px",
-        "4xl": "2560px",
+        "md-pointer": { raw: "(hover: hover) and (pointer: fine)" },
       },
       gridTemplateColumns: {
         "2x1": "minmax(400px, 2fr), minmax(200px,1fr)",
