@@ -1,3 +1,9 @@
+import {
+  faCircleNotch,
+  faPause,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
@@ -121,7 +127,7 @@ const AudioPlayer = ({ src }) => {
   return (
     <>
       {error && (
-        <div className="flex items-center justify-center rounded-full text-xl font-semibold text-white">
+        <div className="flex w-8 items-center justify-center rounded-full text-xl font-semibold text-white">
           {error}!
         </div>
       )}
@@ -131,7 +137,13 @@ const AudioPlayer = ({ src }) => {
           onClick={playPause}
           disabled={isLoading}
         >
-          {isLoading ? "Loading..." : isPlaying ? "||" : ">"}
+          {isLoading ? (
+            <FontAwesomeIcon icon={faCircleNotch} className="fa-spin" />
+          ) : isPlaying ? (
+            <FontAwesomeIcon icon={faPause} className="size-4" />
+          ) : (
+            <FontAwesomeIcon icon={faPlay} className="size-4" />
+          )}
         </button>
         <input
           type="range"
@@ -142,6 +154,7 @@ const AudioPlayer = ({ src }) => {
           disabled={isLoading}
           className="input-KINO flex-1"
         />
+
         <span>
           {formatTime(currentTime)}/{formatTime(duration)}
         </span>
