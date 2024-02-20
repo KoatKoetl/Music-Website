@@ -4,17 +4,21 @@ import LazyAudioPlayer from "./audioPlayer";
 
 const AlbumCover = ({ index, song }) => {
   return (
-    <div className="relative mr-2 grid size-16 items-center justify-center">
-      <span className="absolute left-1 top-0 z-10 font-bold">{index + 1}</span>
-      <LazyLoadImage
-        effect="blur"
-        key={song.id}
-        src={song.album.cover}
-        alt={"Song " + song.title + " cover image"}
-        threshold={300}
-        className="rounded-sm"
-      />
-    </div>
+    <>
+      <h5 className="flex w-16 items-center justify-center text-lg font-bold">
+        {index + 1}
+      </h5>
+      <div className="mr-2 grid size-16 object-center">
+        <LazyLoadImage
+          effect="blur"
+          key={song.id}
+          src={song.album.cover}
+          alt={"Song " + song.title + " cover image"}
+          threshold={300}
+          className="rounded-sm"
+        />
+      </div>
+    </>
   );
 };
 
@@ -25,9 +29,9 @@ AlbumCover.propTypes = {
 
 const SongInfo = ({ song }) => {
   return (
-    <div className="flex min-w-[250px] max-w-[300px] flex-1 flex-col justify-center">
+    <div className="flex min-w-[200px] max-w-[300px] flex-1 flex-col justify-center">
       <h5 className="font-semibold">{song.title}</h5>
-      <h6 className="opacity-80 hover:opacity-100">
+      <h6 className="cursor-pointer opacity-80 hover:opacity-100">
         <span className="font-semibold">Band: </span>KINO
       </h6>
     </div>
@@ -40,7 +44,7 @@ SongInfo.propTypes = {
 
 const FullSongLink = ({ song }) => {
   return (
-    <div className="flex items-center justify-center px-4">
+    <div className="px-4">
       <a
         href={song.link}
         className="whitespace-break-spaces text-center opacity-80 hover:opacity-100 hover:drop-shadow-font-shadow-2"
@@ -62,7 +66,7 @@ FullSongLink.propTypes = {
 
 const ListItem = ({ song, index }) => {
   return (
-    <li className="rounded-sm ">
+    <li className="rounded-sm">
       <div className="flex flex-wrap">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />

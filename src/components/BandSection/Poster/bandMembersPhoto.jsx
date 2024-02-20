@@ -10,13 +10,11 @@ const BandMembersPhoto = () => {
     styles: "justify-self-center rounded-lg",
     effect: "blur",
     placeholderSrc: "band-KINO",
-    width: 600,
-    height: 370,
   };
 
   return (
-    <div className="grid items-center justify-center">
-      <LazyLoadImage {...bandPhotoProps} />
+    <div className="relative flex min-w-[250px] max-w-[600px] flex-1 items-center justify-center lil:min-w-[400px]">
+      <LazyLoadImage {...bandPhotoProps} className="h-full w-full" />
     </div>
   );
 };

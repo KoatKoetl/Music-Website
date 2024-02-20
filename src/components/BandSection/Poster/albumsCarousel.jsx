@@ -21,8 +21,10 @@ const Albums = () => {
   );
 
   return (
-    <div className="w-[210px] p-4">
-      <h4 className="mb-2 text-center text-xl font-semibold">Albums</h4>
+    <div className="w-[210px] p-2 sm:p-4">
+      <h4 className="mb-2 text-center text-lg font-semibold lil:text-xl">
+        Albums
+      </h4>
 
       <Carousel
         plugins={[

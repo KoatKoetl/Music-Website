@@ -1,52 +1,56 @@
 const BandMembersList = () => {
   return (
-    <ul className="min-w-[300px] max-w-[400px] flex-1 p-4">
-      <h4 className="mb-2 text-center text-xl font-semibold">Band Members</h4>
-      <li>
-        <span className="font-semibold">Vocalist:</span> Viktor Robertovich Tsoi
-        -{" "}
-        <a
-          href="https://en.wikipedia.org/wiki/Viktor_Tsoi"
-          target="blank"
-          className="font-semibold text-red-300"
-        >
-          Wikipedia Link
-        </a>
-      </li>
-      <li>
-        <span className="font-semibold">Guitarist:</span> Yuri Dmitriyevich
-        Kasparyan -{" "}
-        <a
-          href="https://en.wikipedia.org/wiki/Yuri_Kasparyan#External_links"
-          target="blank"
-          className="font-semibold text-red-300"
-        >
-          Wikipedia Link
-        </a>
-      </li>
-      <li>
-        <span className="font-semibold">Drummer:</span> Georgy (Gustav)
-        Konstantinovich Guryanov -{" "}
-        <a
-          href="https://en.wikipedia.org/wiki/Georgy_Guryanov"
-          target="blank"
-          className="font-semibold text-red-300"
-        >
-          Wikipedia Link
-        </a>
-      </li>
-      <li>
-        <span className="font-semibold">Bass player:</span> Alexander
-        Valentinovich Titov -{" "}
-        <a
-          href="https://en.wikipedia.org/wiki/Alexander_Titov_(rock_musician)"
-          target="blank"
-          className="font-semibold text-red-300"
-        >
-          Wikipedia Link
-        </a>
-      </li>
-    </ul>
+    <div className="min-w-full max-w-[400px] flex-1 p-2 sm:min-w-[350px] sm:p-4 ">
+      <h4 className="mb-2 text-center text-lg font-semibold lil:text-xl">
+        Band Members
+      </h4>
+      <ul className="text-sm lil:text-base">
+        <li>
+          <span className="font-semibold">Vocalist:</span> Viktor Robertovich
+          Tsoi -{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Viktor_Tsoi"
+            target="blank"
+            className="font-semibold text-red-300"
+          >
+            Wikipedia Link
+          </a>
+        </li>
+        <li>
+          <span className="font-semibold">Guitarist:</span> Yuri Dmitriyevich
+          Kasparyan -{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Yuri_Kasparyan#External_links"
+            target="blank"
+            className="font-semibold text-red-300"
+          >
+            Wikipedia Link
+          </a>
+        </li>
+        <li>
+          <span className="font-semibold">Drummer:</span> Georgy (Gustav)
+          Konstantinovich Guryanov -{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Georgy_Guryanov"
+            target="blank"
+            className="font-semibold text-red-300"
+          >
+            Wikipedia Link
+          </a>
+        </li>
+        <li>
+          <span className="font-semibold">Bass player:</span> Alexander
+          Valentinovich Titov -{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Alexander_Titov_(rock_musician)"
+            target="blank"
+            className="font-semibold text-red-300"
+          >
+            Wikipedia Link
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 
