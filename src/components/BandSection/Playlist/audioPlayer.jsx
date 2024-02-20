@@ -133,18 +133,18 @@ const AudioPlayer = ({ src }) => {
           <span>{error}!</span>
         </div>
       )}
-      <div className="mx-4 flex flex-1 items-center gap-2">
+      <div className="mr-4 flex flex-1 items-center gap-2">
         <button
-          className="rounded-sm bg-dark-gray px-3 py-1"
+          className="rounded-sm bg-dark-gray px-2 sm:px-3 sm:py-1"
           onClick={playPause}
           disabled={isLoading}
         >
           {isLoading ? (
             <FontAwesomeIcon icon={faCircleNotch} className="fa-spin" />
           ) : isPlaying ? (
-            <FontAwesomeIcon icon={faPause} className="size-4" />
+            <FontAwesomeIcon icon={faPause} className="w-2 sm:size-4" />
           ) : (
-            <FontAwesomeIcon icon={faPlay} className="size-4" />
+            <FontAwesomeIcon icon={faPlay} className="w-2 sm:size-4" />
           )}
         </button>
 
@@ -158,15 +158,15 @@ const AudioPlayer = ({ src }) => {
           className="input-KINO flex-1"
         />
 
-        <span>
+        <span className="text-sm sm:text-base">
           {formatTime(currentTime)}/{formatTime(duration)}
         </span>
 
         <button onClick={mute} disabled={isLoading}>
           {isMuted || volume === 0 ? (
-            <FontAwesomeIcon icon={faVolumeXmark} />
+            <FontAwesomeIcon icon={faVolumeXmark} className="w-4 sm:w-8" />
           ) : (
-            <FontAwesomeIcon icon={faVolumeHigh} />
+            <FontAwesomeIcon icon={faVolumeHigh} className="w-4 sm:w-8" />
           )}
         </button>
 
@@ -177,7 +177,7 @@ const AudioPlayer = ({ src }) => {
           step={0.01}
           onChange={(e) => setVolumeLevel(e.target.value)}
           disabled={isLoading}
-          className="input-KINO max-w-[100px]"
+          className="input-KINO w-[50px] max-w-[100px] sm:w-auto"
         />
       </div>
     </>
@@ -217,7 +217,7 @@ const LazyAudioPlayer = ({ src }) => {
   return (
     <div
       id={`lazy-audio-${src}`}
-      className="flex flex-1 flex-wrap justify-center"
+      className="my-2 hidden flex-1 flex-wrap justify-center sm:flex"
     >
       {isIntersecting && <AudioPlayer src={src} />}
     </div>

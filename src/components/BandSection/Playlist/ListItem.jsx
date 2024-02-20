@@ -4,21 +4,19 @@ import LazyAudioPlayer from "./audioPlayer";
 
 const AlbumCover = ({ index, song }) => {
   return (
-    <>
-      <h5 className="flex w-16 items-center justify-center text-lg font-bold">
+    <div className="relative mr-2 grid size-12 object-center sm:size-16">
+      <h5 className="absolute bottom-0 left-1 z-10 flex items-center justify-center rounded-sm bg-black bg-opacity-60 text-sm font-semibold sm:text-lg">
         {index + 1}
       </h5>
-      <div className="mr-2 grid size-16 object-center">
-        <LazyLoadImage
-          effect="blur"
-          key={song.id}
-          src={song.album.cover}
-          alt={"Song " + song.title + " cover image"}
-          threshold={300}
-          className="rounded-sm"
-        />
-      </div>
-    </>
+      <LazyLoadImage
+        effect="blur"
+        key={song.id}
+        src={song.album.cover}
+        alt={"Song " + song.title + " cover image"}
+        threshold={300}
+        className="rounded-sm"
+      />
+    </div>
   );
 };
 
@@ -29,10 +27,10 @@ AlbumCover.propTypes = {
 
 const SongInfo = ({ song }) => {
   return (
-    <div className="flex min-w-[200px] max-w-[300px] flex-1 flex-col justify-center">
-      <h5 className="font-semibold">{song.title}</h5>
-      <h6 className="cursor-pointer opacity-80 hover:opacity-100">
-        <span className="font-semibold">Band: </span>KINO
+    <div className="flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
+      <h5 className="text-sm font-semibold sm:text-base">{song.title}</h5>
+      <h6 className="cursor-pointer text-sm opacity-80 hover:opacity-100 sm:text-base">
+        <span className="font-semibold ">Band: </span>KINO
       </h6>
     </div>
   );
@@ -44,10 +42,10 @@ SongInfo.propTypes = {
 
 const FullSongLink = ({ song }) => {
   return (
-    <div className="px-4">
+    <div className="flex flex-1 items-center justify-center sm:px-4 md:flex-none">
       <a
         href={song.link}
-        className="whitespace-break-spaces text-center opacity-80 hover:opacity-100 hover:drop-shadow-font-shadow-2"
+        className="text-center text-sm opacity-80 hover:opacity-100 hover:drop-shadow-font-shadow-2 sm:text-base"
         target="blank"
       >
         <h5>
@@ -66,7 +64,7 @@ FullSongLink.propTypes = {
 
 const ListItem = ({ song, index }) => {
   return (
-    <li className="rounded-sm">
+    <li className="border-b-2 border-dark-gray border-opacity-50 py-2 last:border-none">
       <div className="flex flex-wrap">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />

@@ -106,7 +106,7 @@ const SongList = () => {
   }
 
   return (
-    <ul className="grid max-h-[770px] gap-4 overflow-x-hidden overflow-y-scroll">
+    <ul className="grid max-h-[350px] overflow-x-hidden overflow-y-scroll sm:max-h-[770px]">
       {playList.map((song, index) => (
         <ListItem key={song.id} index={index} song={song} />
       ))}
