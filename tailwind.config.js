@@ -42,7 +42,8 @@ export default {
         poster: "10px 10px 5px rgb(0 0 0 / 0.5)",
       },
       screens: {
-        "md-pointer": { raw: "(hover: hover) and (pointer: fine)" },
+        pointerMedia: { raw: "(hover: hover) and (pointer: fine)" },
+        // touchMedia
       },
       gridTemplateColumns: {
         "2x1": "minmax(400px, 2fr), minmax(200px,1fr)",
