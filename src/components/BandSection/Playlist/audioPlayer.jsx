@@ -2,6 +2,8 @@ import {
   faCircleNotch,
   faPause,
   faPlay,
+  faVolumeHigh,
+  faVolumeXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
@@ -127,13 +129,13 @@ const AudioPlayer = ({ src }) => {
   return (
     <>
       {error && (
-        <div className="flex w-8 items-center justify-center rounded-full text-xl font-semibold text-white">
-          {error}!
+        <div className="flex items-center justify-center rounded-full text-xl font-semibold text-white">
+          <span>{error}!</span>
         </div>
       )}
-      <div className="flex flex-1 items-center gap-2">
+      <div className="mx-4 flex flex-1 items-center gap-2">
         <button
-          className="rounded-sm bg-dark-gray px-4 py-1"
+          className="rounded-sm bg-dark-gray px-3 py-1"
           onClick={playPause}
           disabled={isLoading}
         >
@@ -145,6 +147,7 @@ const AudioPlayer = ({ src }) => {
             <FontAwesomeIcon icon={faPlay} className="size-4" />
           )}
         </button>
+
         <input
           type="range"
           value={currentTime}
@@ -158,9 +161,15 @@ const AudioPlayer = ({ src }) => {
         <span>
           {formatTime(currentTime)}/{formatTime(duration)}
         </span>
+
         <button onClick={mute} disabled={isLoading}>
-          {isMuted ? "Unmute" : "Mute"}
+          {isMuted || volume === 0 ? (
+            <FontAwesomeIcon icon={faVolumeXmark} />
+          ) : (
+            <FontAwesomeIcon icon={faVolumeHigh} />
+          )}
         </button>
+
         <input
           type="range"
           value={volume}
@@ -168,7 +177,7 @@ const AudioPlayer = ({ src }) => {
           step={0.01}
           onChange={(e) => setVolumeLevel(e.target.value)}
           disabled={isLoading}
-          className="input-KINO"
+          className="input-KINO max-w-[100px]"
         />
       </div>
     </>
@@ -206,7 +215,10 @@ const LazyAudioPlayer = ({ src }) => {
   }, [src]);
 
   return (
-    <div id={`lazy-audio-${src}`} className="flex flex-1 flex-wrap">
+    <div
+      id={`lazy-audio-${src}`}
+      className="flex flex-1 flex-wrap justify-center"
+    >
       {isIntersecting && <AudioPlayer src={src} />}
     </div>
   );
