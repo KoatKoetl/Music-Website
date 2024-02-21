@@ -27,8 +27,14 @@ function NavBar() {
 
 function LogoImage() {
   return (
-    <div className="grid items-center justify-center">
-      <img src="" alt="" width={40} height={40} className="" />
+    <div className="flex items-center justify-center">
+      <img
+        src="Light-LOGO-guitar-pick-svgrepo-com.svg"
+        alt="Logo guitar pick with centered note inside"
+        width={40}
+        height={40}
+      />
+      <span className="text-xl font-bold">My Favorite Music</span>
     </div>
   );
 }
