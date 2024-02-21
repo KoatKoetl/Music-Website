@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import useAPI from "../../useDeezerAPI";
 import ListItem from "./ListItem";
-
 // const mockAPI_DATA = [
 //   {
 //     id: 410639982,
@@ -84,6 +85,61 @@ import ListItem from "./ListItem";
 //   },
 // ];
 
+// Function to search for music by partial name
+
+const searchMusicByPartialName = (musicArray, partialName) => {
+  partialName = partialName.toLowerCase();
+  return musicArray.filter((music) =>
+    music.title.toLowerCase().includes(partialName),
+  );
+};
+
+const MusicSearch = ({ musicArray }) => {
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    setSearchResults(searchMusicByPartialName(musicArray, searchInput));
+  }, [musicArray, searchInput]);
+
+  const handleSearch = (event) => {
+    const partialName = event.target.value;
+    setSearchInput(partialName);
+  };
+
+  return (
+    <div>
+      <div className="mb-2">
+        <label htmlFor="searchInput" className="text-lg font-semibold">
+          Search Music:{" "}
+        </label>
+        <input
+          type="text"
+          id="searchInput"
+          value={searchInput}
+          onChange={handleSearch}
+          className="max-w-[400px] border-b-2 bg-transparent indent-1 placeholder:text-white placeholder:opacity-85"
+          placeholder="Song Name..."
+        />
+      </div>
+
+      <ul className="grid max-h-[350px] overflow-x-hidden overflow-y-scroll sm:max-h-[770px]">
+        {searchResults.length > 0
+          ? searchResults.map((music, index) => (
+              <ListItem key={music.id} index={index} song={music} />
+            ))
+          : musicArray.map((song, index) => (
+              <ListItem key={song.id} index={index} song={song} />
+            ))}
+      </ul>
+    </div>
+  );
+};
+
+MusicSearch.propTypes = {
+  musicArray: PropTypes.array,
+};
+
 const SongList = () => {
   const { playList, loading } = useAPI("playlist/10674002782");
 
@@ -106,11 +162,9 @@ const SongList = () => {
   }
 
   return (
-    <ul className="grid max-h-[350px] overflow-x-hidden overflow-y-scroll sm:max-h-[770px]">
-      {playList.map((song, index) => (
-        <ListItem key={song.id} index={index} song={song} />
-      ))}
-    </ul>
+    <>
+      <MusicSearch musicArray={playList} />
+    </>
   );
 };
 
