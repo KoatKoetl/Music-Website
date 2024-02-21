@@ -39,17 +39,17 @@ const Main = () => {
 
   return (
     <main className="mb-20 flex min-h-[90svh] items-center justify-center">
-      <div className="relative flex size-[260px] flex-col items-center justify-center overflow-hidden rounded-full p-10 text-center font-DMSerifDisplay transition-all duration-500 ease-in-out hover:shadow-12xl sm:size-[500px] md:size-[650px] lg:size-[600px] xl:size-[700px] 2xl:size-[800px] lil:size-[400px] 4xl:size-[1000px]">
+      <div className="mediaPointer:hover:shadow-12xl mediaTouch:active:shadow-12xl relative flex size-[260px] flex-col items-center justify-center overflow-hidden rounded-full p-10 text-center font-DMSerifDisplay transition-all duration-500 ease-in-out lil:size-[400px] sm:size-[500px] md:size-[650px] lg:size-[600px] xl:size-[700px] 2xl:size-[800px] 4xl:size-[1000px]">
         <h1 className="title leading-0 relative z-10 flex lg:mb-4">
-          <span className="text-wrapper 4x:text-12xl relative inline-block overflow-hidden text-2xl font-bold sm:text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl lil:text-4xl lil:leading-normal">
+          <span className="text-wrapper 4x:text-12xl relative inline-block overflow-hidden text-2xl font-bold lil:text-4xl lil:leading-normal sm:text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
             <span className="letters">Hello everyone,</span>
           </span>
         </h1>
         <h2 className="title relative z-10 flex flex-col">
-          <span className="text-wrapper relative inline-block overflow-hidden text-sm font-bold md:px-2 md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl lil:text-xl 4xl:text-4xl">
+          <span className="text-wrapper relative inline-block overflow-hidden text-sm font-bold lil:text-xl md:px-2 md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 4xl:text-4xl">
             <span className="letters">This website is just made up</span>
           </span>
-          <span className="text-wrapper relative inline-block overflow-hidden text-sm font-bold md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl lil:text-xl 4xl:text-4xl">
+          <span className="text-wrapper relative inline-block overflow-hidden text-sm font-bold lil:text-xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 4xl:text-4xl">
             <span className="letters">of my favorite music</span>
           </span>
         </h2>

@@ -29,7 +29,7 @@ const SongInfo = ({ song }) => {
   return (
     <div className="flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
       <h5 className="text-sm font-semibold sm:text-base">{song.title}</h5>
-      <h6 className="cursor-pointer text-sm opacity-80 hover:opacity-100 sm:text-base">
+      <h6 className="mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100 cursor-pointer text-sm opacity-80 transition-all sm:text-base">
         <span className="font-semibold ">Band: </span>KINO
       </h6>
     </div>
@@ -45,7 +45,7 @@ const FullSongLink = ({ song }) => {
     <div className="flex flex-1 items-center justify-center sm:px-4 md:flex-none">
       <a
         href={song.link}
-        className="text-center text-sm opacity-80 hover:opacity-100 hover:drop-shadow-font-shadow-2 sm:text-base"
+        className="mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100 mediaPointer:hover:drop-shadow-font-shadow-2 mediaTouch:active:drop-shadow-font-shadow-2 text-center text-sm opacity-80 transition-all sm:text-base"
         target="blank"
       >
         <h5>
