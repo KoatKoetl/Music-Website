@@ -42,7 +42,7 @@ export default {
         "font-shadow-6": "0 6px 6px rgba(0,0,0,0.8)",
       },
       boxShadow: {
-        "12xl": "0 0 150px rgb(255 255 255 / 0.5)",
+        "10xl": "0 0 100px rgb(255 255 255 / 0.5)",
         poster: "10px 10px 5px rgb(0 0 0 / 0.5)",
       },
       gridTemplateColumns: {
