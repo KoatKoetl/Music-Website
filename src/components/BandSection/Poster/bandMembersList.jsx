@@ -11,7 +11,7 @@ const BandMembersList = () => {
           <a
             href="https://en.wikipedia.org/wiki/Viktor_Tsoi"
             target="blank"
-            className="font-semibold text-red-300"
+            className="mediaPointer:hover:text-red-600 mediaTouch:active:text-red-600 font-semibold text-red-300 transition-colors"
           >
             Wikipedia Link
           </a>
@@ -22,7 +22,7 @@ const BandMembersList = () => {
           <a
             href="https://en.wikipedia.org/wiki/Yuri_Kasparyan#External_links"
             target="blank"
-            className="font-semibold text-red-300"
+            className="mediaPointer:hover:text-red-600 mediaTouch:active:text-red-600 font-semibold text-red-300 transition-colors"
           >
             Wikipedia Link
           </a>
@@ -33,7 +33,7 @@ const BandMembersList = () => {
           <a
             href="https://en.wikipedia.org/wiki/Georgy_Guryanov"
             target="blank"
-            className="font-semibold text-red-300"
+            className="mediaPointer:hover:text-red-600 mediaTouch:active:text-red-600 font-semibold text-red-300 transition-colors"
           >
             Wikipedia Link
           </a>
@@ -44,7 +44,7 @@ const BandMembersList = () => {
           <a
             href="https://en.wikipedia.org/wiki/Alexander_Titov_(rock_musician)"
             target="blank"
-            className="font-semibold text-red-300"
+            className="mediaPointer:hover:text-red-600 mediaTouch:active:text-red-600 font-semibold text-red-300 transition-colors"
           >
             Wikipedia Link
           </a>
