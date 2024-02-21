@@ -129,7 +129,7 @@ const AudioPlayer = ({ src }) => {
   return (
     <>
       {error && (
-        <div className="flex items-center justify-center rounded-full text-xl font-semibold text-white">
+        <div className="mx-2 flex items-center justify-center rounded-full text-xl font-semibold text-white">
           <span>{error}!</span>
         </div>
       )}
