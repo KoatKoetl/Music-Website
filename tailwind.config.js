@@ -28,6 +28,10 @@ export default {
       "4xl": "2560px",
     },
     extend: {
+      screens: {
+        mediaPointer: { raw: "(hover: hover) and (pointer: fine)" },
+        mediaTouch: { raw: "(pointer: coarse)" },
+      },
       fontFamily: {
         DMSerifDisplay: ["DM Serif Display", "serif"],
         Rubik: ["Rubik", "sans-serif"],
@@ -40,10 +44,6 @@ export default {
       boxShadow: {
         "12xl": "0 0 150px rgb(255 255 255 / 0.5)",
         poster: "10px 10px 5px rgb(0 0 0 / 0.5)",
-      },
-      screens: {
-        pointerMedia: { raw: "(hover: hover) and (pointer: fine)" },
-        // touchMedia
       },
       gridTemplateColumns: {
         "2x1": "minmax(400px, 2fr), minmax(200px,1fr)",
