@@ -118,8 +118,9 @@ const MusicSearch = ({ musicArray }) => {
           id="searchInput"
           value={searchInput}
           onChange={handleSearch}
-          className="max-w-[400px] border-b-2 bg-transparent indent-1 placeholder:text-white placeholder:opacity-85"
+          className="max-w-[400px] border-b-2 bg-transparent indent-1 transition-colors placeholder:text-white placeholder:opacity-85 focus-visible:border-dark-gray focus-visible:outline-none"
           placeholder="Song Name..."
+          autoComplete="off"
         />
       </div>
 
