@@ -30,7 +30,7 @@ const SongInfo = ({ song }) => {
     <div className="flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
       <h5 className="text-sm font-semibold sm:text-base">{song.title}</h5>
       <h6 className="text-sm opacity-80 transition-all sm:text-base mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100">
-        <span className="font-semibold ">Band: </span>KINO
+        <span className="font-semibold ">Band: </span>Nautilus Pompilius
       </h6>
     </div>
   );
