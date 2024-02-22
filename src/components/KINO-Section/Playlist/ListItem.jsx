@@ -28,8 +28,16 @@ AlbumCover.propTypes = {
 const SongInfo = ({ song }) => {
   return (
     <div className="flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
-      <h5 className="text-sm font-semibold sm:text-base">{song.title}</h5>
-      <h6 className="mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100 text-sm opacity-80 transition-all sm:text-base">
+      <h5
+        className="text-sm font-semibold sm:text-base"
+        aria-label="song title"
+      >
+        {song.title}
+      </h5>
+      <h6
+        className="text-sm opacity-80 transition-all sm:text-base mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100"
+        aria-label="band name"
+      >
         <span className="font-semibold ">Band: </span>KINO
       </h6>
     </div>
@@ -45,7 +53,7 @@ const FullSongLink = ({ song }) => {
     <div className="flex flex-1 items-center justify-center sm:px-4 md:flex-none">
       <a
         href={song.link}
-        className="mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100 mediaPointer:hover:drop-shadow-font-shadow-2 mediaTouch:active:drop-shadow-font-shadow-2 text-center text-sm opacity-80 transition-all sm:text-base"
+        className="text-center text-sm opacity-80 transition-all sm:text-base mediaPointer:hover:opacity-100 mediaPointer:hover:drop-shadow-font-shadow-2 mediaTouch:active:opacity-100 mediaTouch:active:drop-shadow-font-shadow-2"
         target="blank"
       >
         <h5>
