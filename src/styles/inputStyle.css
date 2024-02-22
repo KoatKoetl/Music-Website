@@ -1,4 +1,4 @@
-.input-KINO[type="range"] {
+input[type="range"] {
   -webkit-appearance: none;
   margin-right: 5px;
   height: 3px;

@@ -155,7 +155,7 @@ const AudioPlayer = ({ src }) => {
             max={duration}
             onChange={(e) => seek(e.target.value)}
             disabled={isLoading}
-            className="input-KINO flex-1"
+            className="flex-1"
           />
 
           <span className="text-sm sm:text-base">
@@ -177,7 +177,7 @@ const AudioPlayer = ({ src }) => {
             step={0.01}
             onChange={(e) => setVolumeLevel(e.target.value)}
             disabled={isLoading}
-            className="input-KINO w-[50px] max-w-[100px] sm:w-auto"
+            className="w-[50px] max-w-[100px] sm:w-auto"
           />
         </div>
       )}
