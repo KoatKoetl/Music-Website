@@ -138,6 +138,7 @@ const AudioPlayer = ({ src }) => {
             className="bg-dark-blue rounded-sm px-2 sm:px-3 sm:py-1"
             onClick={playPause}
             disabled={isLoading}
+            aria-label="button play/pause"
           >
             {isLoading ? (
               <FontAwesomeIcon icon={faCircleNotch} className="fa-spin" />
@@ -156,13 +157,14 @@ const AudioPlayer = ({ src }) => {
             onChange={(e) => seek(e.target.value)}
             disabled={isLoading}
             className="flex-1"
+            aria-label="song progress player bar"
           />
 
           <span className="text-sm sm:text-base">
             {formatTime(currentTime)}/{formatTime(duration)}
           </span>
 
-          <button onClick={mute} disabled={isLoading}>
+          <button onClick={mute} disabled={isLoading} aria-label="button mute">
             {isMuted || volume === 0 ? (
               <FontAwesomeIcon icon={faVolumeXmark} className="w-4 sm:w-8" />
             ) : (
@@ -178,6 +180,7 @@ const AudioPlayer = ({ src }) => {
             onChange={(e) => setVolumeLevel(e.target.value)}
             disabled={isLoading}
             className="w-[50px] max-w-[100px] sm:w-auto"
+            aria-label="volume bar"
           />
         </div>
       )}
