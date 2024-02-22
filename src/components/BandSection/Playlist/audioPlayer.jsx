@@ -128,58 +128,59 @@ const AudioPlayer = ({ src }) => {
 
   return (
     <>
-      {error && (
-        <div className="mx-2 flex items-center justify-center rounded-full text-xl font-semibold text-white">
+      {error ? (
+        <div className="flex flex-1 items-center justify-center rounded-full text-center text-lg font-semibold text-white md:text-xl">
           <span>{error}!</span>
         </div>
+      ) : (
+        <div className="mr-4 flex flex-1 items-center gap-2">
+          <button
+            className="rounded-sm bg-dark-gray px-2 sm:px-3 sm:py-1"
+            onClick={playPause}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <FontAwesomeIcon icon={faCircleNotch} className="fa-spin" />
+            ) : isPlaying ? (
+              <FontAwesomeIcon icon={faPause} className="w-2 sm:size-4" />
+            ) : (
+              <FontAwesomeIcon icon={faPlay} className="w-2 sm:size-4" />
+            )}
+          </button>
+
+          <input
+            type="range"
+            value={currentTime}
+            step={0.1}
+            max={duration}
+            onChange={(e) => seek(e.target.value)}
+            disabled={isLoading}
+            className="input-KINO flex-1"
+          />
+
+          <span className="text-sm sm:text-base">
+            {formatTime(currentTime)}/{formatTime(duration)}
+          </span>
+
+          <button onClick={mute} disabled={isLoading}>
+            {isMuted || volume === 0 ? (
+              <FontAwesomeIcon icon={faVolumeXmark} className="w-4 sm:w-8" />
+            ) : (
+              <FontAwesomeIcon icon={faVolumeHigh} className="w-4 sm:w-8" />
+            )}
+          </button>
+
+          <input
+            type="range"
+            value={volume}
+            max={1}
+            step={0.01}
+            onChange={(e) => setVolumeLevel(e.target.value)}
+            disabled={isLoading}
+            className="input-KINO w-[50px] max-w-[100px] sm:w-auto"
+          />
+        </div>
       )}
-      <div className="mr-4 flex flex-1 items-center gap-2">
-        <button
-          className="rounded-sm bg-dark-gray px-2 sm:px-3 sm:py-1"
-          onClick={playPause}
-          disabled={isLoading}
-        >
-          {isLoading ? (
-            <FontAwesomeIcon icon={faCircleNotch} className="fa-spin" />
-          ) : isPlaying ? (
-            <FontAwesomeIcon icon={faPause} className="w-2 sm:size-4" />
-          ) : (
-            <FontAwesomeIcon icon={faPlay} className="w-2 sm:size-4" />
-          )}
-        </button>
-
-        <input
-          type="range"
-          value={currentTime}
-          step={0.1}
-          max={duration}
-          onChange={(e) => seek(e.target.value)}
-          disabled={isLoading}
-          className="input-KINO flex-1"
-        />
-
-        <span className="text-sm sm:text-base">
-          {formatTime(currentTime)}/{formatTime(duration)}
-        </span>
-
-        <button onClick={mute} disabled={isLoading}>
-          {isMuted || volume === 0 ? (
-            <FontAwesomeIcon icon={faVolumeXmark} className="w-4 sm:w-8" />
-          ) : (
-            <FontAwesomeIcon icon={faVolumeHigh} className="w-4 sm:w-8" />
-          )}
-        </button>
-
-        <input
-          type="range"
-          value={volume}
-          max={1}
-          step={0.01}
-          onChange={(e) => setVolumeLevel(e.target.value)}
-          disabled={isLoading}
-          className="input-KINO w-[50px] max-w-[100px] sm:w-auto"
-        />
-      </div>
     </>
   );
 };
