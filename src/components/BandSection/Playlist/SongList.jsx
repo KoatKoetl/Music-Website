@@ -123,7 +123,7 @@ const MusicSearch = ({ musicArray }) => {
         />
       </div>
 
-      <ul className="grid max-h-[350px] overflow-x-hidden overflow-y-scroll sm:max-h-[770px]">
+      <ul className="grid h-[350px] overflow-x-hidden overflow-y-scroll sm:h-[400px] xl:h-[770px]">
         {searchResults.length > 0
           ? searchResults.map((music, index) => (
               <ListItem key={music.id} index={index} song={music} />
