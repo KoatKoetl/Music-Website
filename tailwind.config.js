@@ -35,6 +35,7 @@ export default {
       fontFamily: {
         DMSerifDisplay: ["DM Serif Display", "serif"],
         Rubik: ["Rubik", "sans-serif"],
+        PlayfarDisplay: ["Playfair Display", "serif"],
       },
       dropShadow: {
         "font-shadow-2": "0 2px 2px rgba(0,0,0,0.8)",
@@ -93,6 +94,7 @@ export default {
         },
         "dark-gray": "#191919",
         "dark-pink": "#750E21",
+        "dark-blue": "#2a5298",
       },
       borderRadius: {
         lg: "var(--radius)",
