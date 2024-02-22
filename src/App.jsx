@@ -1,4 +1,5 @@
-import BandSection from "/src/components/BandSection/bandSection";
+import KINOSection from "/src/components/KINO-Section/bandSection";
+import NautilusPompiliusSection from "/src/components/NautilusPompilius-Section/bandSection";
 import Header from "/src/components/header";
 import Main from "/src/components/main";
 
@@ -7,7 +8,8 @@ const App = () => {
     <>
       <Header />
       <Main />
-      <BandSection />
+      <KINOSection />
+      <NautilusPompiliusSection />
     </>
   );
 };
