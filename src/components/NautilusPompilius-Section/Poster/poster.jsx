@@ -4,7 +4,10 @@ import BandMembersPhoto from "./bandMembersPhoto";
 
 const Poster = () => {
   return (
-    <div className="flex min-w-[250px] max-w-[650px] flex-1 flex-col items-center justify-center bg-gradient-to-t from-[#1e3b7288] via-[#1e3b72b2] to-[#2a529894] p-2 shadow-poster shadow-gray-700 lil:min-w-[435px] sm:p-4 md:min-w-[650px]">
+    <section
+      className="flex min-w-[250px] max-w-[650px] flex-1 flex-col items-center justify-center bg-gradient-to-t from-[#1e3b7288] via-[#1e3b72b2] to-[#2a529894] p-2 shadow-poster shadow-gray-700 lil:min-w-[435px] sm:p-4 md:min-w-[650px]"
+      aria-label="custom made Nautilus Pompilius band poster"
+    >
       <a
         href="https://en.wikipedia.org/wiki/Nautilus_Pompilius_(band)"
         target="blank"
@@ -18,7 +21,7 @@ const Poster = () => {
         <BandMembersList />
         <Albums />
       </div>
-    </div>
+    </section>
   );
 };
 
