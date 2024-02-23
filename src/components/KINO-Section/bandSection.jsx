@@ -3,7 +3,7 @@ import Poster from "./Poster/poster";
 
 const BandSection = () => {
   return (
-    <section className="font-Rubik" id="KINO">
+    <section className="font-Rubik" id="section-KINO">
       <div className="flex flex-wrap justify-center gap-12 bg-dark-pink p-3 lil:p-5 2xl:py-10">
         <Poster />
         <PlayList />
