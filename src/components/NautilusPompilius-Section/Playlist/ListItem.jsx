@@ -5,7 +5,7 @@ import LazyAudioPlayer from "./audioPlayer";
 const AlbumCover = ({ index, song }) => {
   return (
     <div className="relative mr-2 grid size-12 object-center sm:size-16">
-      <span className="absolute bottom-0 z-10 flex items-center justify-center rounded-bl-sm bg-black bg-opacity-60 px-1 text-sm font-bold sm:text-base sm:leading-tight">
+      <span className="absolute bottom-0 z-10 flex items-center justify-center rounded-bl-sm rounded-tr-sm bg-black bg-opacity-60 px-1 text-sm font-bold sm:text-lg sm:leading-normal">
         {index + 1}
       </span>
       <LazyLoadImage
@@ -72,7 +72,7 @@ FullSongLink.propTypes = {
 
 const ListItem = ({ song, index }) => {
   return (
-    <li className="border-dark-blue border-b-2 border-opacity-80 py-2 last:border-none">
+    <li className="border-b-2 border-dark-blue border-opacity-80 py-2 last:border-none">
       <div className="flex flex-wrap">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />

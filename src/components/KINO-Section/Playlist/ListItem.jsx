@@ -5,7 +5,7 @@ import LazyAudioPlayer from "./audioPlayer";
 const AlbumCover = ({ index, song }) => {
   return (
     <div className="relative mr-2 grid size-12 object-center sm:size-16">
-      <span className="absolute bottom-0 left-1 z-10 flex items-center justify-center rounded-sm bg-black bg-opacity-60 text-sm font-semibold sm:text-lg">
+      <span className="absolute bottom-0 z-10 flex items-center justify-center rounded-bl-sm rounded-tr-sm bg-black bg-opacity-60 px-1 text-sm font-semibold sm:text-base">
         {index + 1}
       </span>
       <LazyLoadImage
