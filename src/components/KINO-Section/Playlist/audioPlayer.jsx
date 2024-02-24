@@ -33,7 +33,7 @@ const AudioPlayer = ({ src }) => {
       ) : (
         <div className="mr-4 flex flex-1 items-center gap-2">
           <button
-            className="rounded-sm bg-dark-gray px-2 sm:px-3 sm:py-1"
+            className="rounded-sm bg-dark-gray px-2 transition-colors sm:px-3 sm:py-1 mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground"
             onClick={playPause}
             disabled={isLoading}
             aria-label="button play/pause"
