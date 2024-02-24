@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import LazyAudioPlayer from "./audioPlayer";
+import LazyAudioPlayer from "../../../utils/LazyAudioPlayer";
+import AudioPlayer from "../Playlist/audioPlayer";
 
 const AlbumCover = ({ index, song }) => {
   return (
@@ -77,7 +78,10 @@ const ListItem = ({ song, index }) => {
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />
         <FullSongLink song={song} />
-        <LazyAudioPlayer src={song.preview} />
+        <LazyAudioPlayer
+          src={song.preview}
+          AudioPlayerComponent={AudioPlayer}
+        />
       </div>
     </li>
   );

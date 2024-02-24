@@ -1,7 +1,9 @@
+import anime from "animejs";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAPI from "../../useDeezerAPI";
 import ListItem from "./ListItem";
+
 // const mockAPI_DATA = [
 //   {
 //     id: 410639982,
@@ -95,11 +97,41 @@ const searchMusicByPartialName = (musicArray, partialName) => {
 };
 
 const MusicSearch = ({ musicArray }) => {
+  const listRef = useRef(null);
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
+    // const listItems = listRef.current.querySelectorAll("li");
+
+    // const handleIntersection = (entries, observer) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       anime({
+    //         targets: entry.target,
+    //         translateX: 0,
+    //         easing: "easeInOutQuad",
+    //         duration: 500,
+    //       });
+    //       observer.unobserve(entry.target);
+    //     }
+    //   });
+    // };
+
+    // const observer = new IntersectionObserver(handleIntersection, {
+    //   root: null,
+    //   rootMargin: "0px",
+    //   threshold: 0.5,
+    // });
+
+    // listItems.forEach((item) => {
+    //   anime.set(item, { translateX: "-100%" });
+    //   observer.observe(item);
+    // });
+
     setSearchResults(searchMusicByPartialName(musicArray, searchInput));
+
+    // return observer.disconnect();
   }, [musicArray, searchInput]);
 
   const handleSearch = (event) => {
@@ -124,7 +156,10 @@ const MusicSearch = ({ musicArray }) => {
         />
       </div>
 
-      <ul className="h-[350px] overflow-x-hidden overflow-y-scroll sm:h-[400px] xl:h-[770px]">
+      <ul
+        className="h-[350px] overflow-x-hidden overflow-y-scroll sm:h-[400px] xl:h-[770px]"
+        ref={listRef}
+      >
         {searchResults.length > 0
           ? searchResults.map((music, index) => (
               <ListItem key={music.id} index={index} song={music} />
