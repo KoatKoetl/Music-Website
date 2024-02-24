@@ -28,6 +28,12 @@ export default {
       "4xl": "2560px",
     },
     extend: {
+      transitionDuration: {
+        1500: "1500ms",
+        2500: "2500ms",
+        3000: "3000ms",
+      },
+      transformOrigin: {},
       screens: {
         mediaPointer: { raw: "(hover: hover) and (pointer: fine)" },
         mediaTouch: { raw: "(pointer: coarse)" },

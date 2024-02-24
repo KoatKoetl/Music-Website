@@ -29,7 +29,7 @@ const LazyAudioPlayer = ({ src, AudioPlayerComponent }) => {
   return (
     <div
       id={`lazy-audio-${src}`}
-      className="my-2 hidden flex-1 flex-wrap justify-center sm:flex"
+      className="z-10 my-2 hidden flex-1 flex-wrap justify-center sm:flex"
     >
       {isIntersecting && <AudioPlayerComponent src={src} />}
     </div>

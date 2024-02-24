@@ -5,7 +5,7 @@ import AudioPlayer from "../Playlist/audioPlayer";
 
 const AlbumCover = ({ index, song }) => {
   return (
-    <div className="relative mr-2 grid size-12 object-center sm:size-16">
+    <div className="relative z-10 mr-2 grid size-12 object-center sm:size-16">
       <span className="absolute bottom-0 z-10 flex items-center justify-center rounded-bl-sm rounded-tr-sm bg-black bg-opacity-60 px-1 text-sm font-bold sm:text-lg sm:leading-normal">
         {index + 1}
       </span>
@@ -15,7 +15,6 @@ const AlbumCover = ({ index, song }) => {
         src={song.album.cover}
         alt={"Song " + song.title + " cover image"}
         threshold={300}
-        className="rounded-sm"
       />
     </div>
   );
@@ -28,7 +27,7 @@ AlbumCover.propTypes = {
 
 const SongInfo = ({ song }) => {
   return (
-    <div className="flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
+    <div className="z-10 flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
       <h5
         className="text-sm font-semibold sm:text-base"
         aria-label="song title"
@@ -51,7 +50,7 @@ SongInfo.propTypes = {
 
 const FullSongLink = ({ song }) => {
   return (
-    <div className="flex flex-1 items-center justify-center sm:px-4 md:flex-none">
+    <div className="z-10 flex flex-1 items-center justify-center sm:px-4 md:flex-none">
       <a
         href={song.link}
         className="text-center text-sm opacity-80 transition-all sm:text-base mediaPointer:hover:opacity-100 mediaPointer:hover:drop-shadow-font-shadow-2 mediaTouch:active:opacity-100 mediaTouch:active:drop-shadow-font-shadow-2"
@@ -73,8 +72,8 @@ FullSongLink.propTypes = {
 
 const ListItem = ({ song, index }) => {
   return (
-    <li className="border-b-2 border-dark-blue border-opacity-80 py-2 last:border-none">
-      <div className="flex flex-wrap">
+    <li className="relative border-b-2 border-dark-blue border-opacity-80 py-2 last:border-none">
+      <div className="before:duration-1500 flex flex-wrap before:absolute before:z-0 before:h-0 before:w-4 before:origin-left before:bg-dark-blue before:transition-transform sm:before:h-[64px] before:mediaPointer:hover:scale-x-[75]">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />
         <FullSongLink song={song} />
