@@ -73,7 +73,7 @@ FullSongLink.propTypes = {
 const ListItem = ({ song, index }) => {
   return (
     <li className="relative z-10 ml-2 border-b-2 border-dark-gray border-opacity-50 bg-dark-pink py-1 last:border-none">
-      <div className="flex flex-wrap before:absolute before:z-0 before:h-0 before:w-4 before:origin-left before:bg-dark-gray before:transition-transform before:duration-1000 sm:before:h-[64px] before:mediaPointer:hover:scale-x-[75]">
+      <div className="flex flex-wrap before:absolute before:z-0 before:h-0 before:w-4 before:origin-left before:bg-dark-gray before:transition-transform before:duration-1000 sm:before:h-[64px] mediaPointer:before:hover:scale-x-[75]">
         <AlbumCover index={index} song={song} />
         <SongInfo song={song} />
         <FullSongLink song={song} />
