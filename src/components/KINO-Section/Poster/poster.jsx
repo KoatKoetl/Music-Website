@@ -5,14 +5,12 @@ import BandMembersPhoto from "./bandMembersPhoto";
 const Poster = () => {
   return (
     <section
-      className="flex min-w-[250px] max-w-[650px] flex-1 flex-col items-center justify-center bg-dark-gray p-2 shadow-poster lil:min-w-[435px] sm:p-4 md:min-w-[650px]"
+      className="flex min-w-[250px] max-w-[650px] flex-1 rotate-[20deg] scale-50 transform-gpu flex-col items-center justify-center bg-dark-gray p-2 shadow-poster transition-all duration-700 hover:rotate-[360deg] hover:scale-100 lil:min-w-[435px] sm:p-4 md:min-w-[650px]"
       aria-label="custom made KINO band poster"
     >
-      <a href="https://en.wikipedia.org/wiki/Kino_(band)" target="blank">
-        <h3 className="text-center font-bold leading-[1] tracking-tighter [font-size:_clamp(2em,30vw,13em)] md:text-[13rem] md:leading-[180px]">
-          К<span className="font-normal">И</span>НО
-        </h3>
-      </a>
+      <h3 className="text-center font-bold leading-[1] tracking-tighter [font-size:_clamp(2em,30vw,13em)] md:text-[13rem] md:leading-[180px]">
+        К<span className="font-normal">И</span>НО
+      </h3>
       <BandMembersPhoto />
       <div className="flex flex-wrap justify-center md:justify-normal">
         <BandMembersList />
