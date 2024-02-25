@@ -68,6 +68,14 @@ const NavBar = () => {
           </a>
         </li>
         <RenderDropDownMenu />
+        <li className="rounded-md px-2 mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
+          <a
+            href="#tools"
+            className="flex h-full items-center text-sm sm:text-base "
+          >
+            Used Tools
+          </a>
+        </li>
       </ul>
     </nav>
   );

@@ -6,7 +6,7 @@ import TailwindCSSLogo from "/home/stanislav/GitHub_Repositories/Music-Website/s
 
 const Tools = () => {
   return (
-    <section>
+    <section id="tools">
       <div className="bg-green-grass py-8 shadow-md">
         <h5 className="text-center text-4xl font-semibold text-white lil:text-5xl">
           Created using
