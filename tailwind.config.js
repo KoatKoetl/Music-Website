@@ -101,6 +101,7 @@ export default {
         "dark-gray": "#191919",
         "dark-pink": "#750E21",
         "dark-blue": "#2a5298",
+        "green-grass": "#1fa552c5",
       },
       borderRadius: {
         lg: "var(--radius)",
