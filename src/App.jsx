@@ -3,6 +3,7 @@ import NautilusPompiliusSection from "/src/components/NautilusPompilius-Section/
 import Footer from "/src/components/footer";
 import Header from "/src/components/header";
 import Main from "/src/components/main";
+import Tools from "/src/components/tools";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Main />
       <KINOSection />
       <NautilusPompiliusSection />
+      <Tools />
       <Footer />
     </>
   );
