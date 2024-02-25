@@ -90,7 +90,9 @@ const LogoImage = () => {
         width={40}
         height={40}
       />
-      <span className="text-sm font-bold sm:text-xl">My Favorite Music</span>
+      <span className="hidden text-sm font-bold lil:block sm:text-xl">
+        My Favorite Music
+      </span>
     </div>
   );
 };
