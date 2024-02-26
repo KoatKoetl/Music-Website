@@ -1,5 +1,9 @@
 # Favorite Music Website
 
+## View the website
+
+<big><a href="https://koatkoetl.github.io/Music-Website/" target="blank">My favorite music</a></big>
+
 ## Screenshots
 
 <img src="https://i.postimg.cc/sfMMrtYJ/Screenshot-from-2024-02-26-23-37-40.png" width="600">
