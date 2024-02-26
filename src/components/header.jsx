@@ -31,7 +31,7 @@ const NavBar = () => {
 
         <li className="flex">
           <DropdownMenu>
-            <DropdownMenuTrigger className="rounded-md px-2 text-sm sm:text-base mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
+            <DropdownMenuTrigger className="rounded-md px-2 text-sm data-[state=open]:bg-accent data-[state=open]:text-accent-foreground  sm:text-base mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
               <span className="mr-2">Artists</span>{" "}
               <FontAwesomeIcon icon={faCaretDown} />
             </DropdownMenuTrigger>
@@ -77,7 +77,7 @@ const LogoImage = () => {
 const BurgerMenu = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center justify-center rounded-md px-2 text-sm lil:hidden sm:text-base mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
+      <DropdownMenuTrigger className="flex items-center justify-center rounded-md px-2 text-sm lil:hidden sm:text-base mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground ">
         <FontAwesomeIcon icon={faBars} />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-2.5 border-2 bg-dark-gray text-accent">
@@ -91,7 +91,7 @@ const BurgerMenu = () => {
           </a>
         </DropdownMenuItem>
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger className="bg-dark-gray text-accent mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:focus:bg-accent mediaTouch:focus:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground ">
+          <DropdownMenuSubTrigger className="bg-dark-gray text-accent data-[state=open]:text-accent-foreground mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:focus:bg-accent mediaTouch:focus:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground ">
             Artists
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
