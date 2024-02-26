@@ -1,8 +1,12 @@
 import axios from "axios";
 
-const API_URL = "https://deezerdevs-deezer.p.rapidapi.com";
-const API_KEY = "10b9b220admsh8993db319d364ebp1e3400jsn7446c612bf49";
-const API_Host = "deezerdevs-deezer.p.rapidapi.com";
+const apiKEY = import.meta.env.VITE_API_KEY;
+const apiURL = import.meta.env.VITE_API_URL;
+const apiHOST = import.meta.env.VITE_API_HOST;
+
+const API_URL = apiURL;
+const API_KEY = apiKEY;
+const API_Host = apiHOST;
 
 const API_Call = async (endpoint, method = "GET", params = {}) => {
   const headers = {
