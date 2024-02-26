@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useAPI from "../../useDeezerAPI";
 import ListItem from "./ListItem";
 
@@ -36,7 +36,7 @@ const MusicSearch = ({ musicArray }) => {
           id="searchInput-Nautilus"
           value={searchInput}
           onChange={handleSearch}
-          className="focus-visible:border-dark-blue max-w-[400px] border-b-2 bg-transparent indent-1 transition-colors placeholder:text-white placeholder:opacity-85 focus-visible:outline-none"
+          className="max-w-[400px] border-b-2 bg-transparent indent-1 transition-colors placeholder:text-white placeholder:opacity-85 focus-visible:border-dark-blue focus-visible:outline-none"
           placeholder="Song Name..."
           autoComplete="off"
         />

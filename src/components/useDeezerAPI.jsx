@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import API_Call from "../utils/API/Deezer_API";
 
 const useAPI = (endpoint) => {

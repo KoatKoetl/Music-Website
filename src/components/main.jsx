@@ -1,5 +1,5 @@
 import anime from "animejs";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import guitarImageLogo from "/src/assets/images/Main/guitarStartLogo.webp";
 
 const animateTyping = () => {
