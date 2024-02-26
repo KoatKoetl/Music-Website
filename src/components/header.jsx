@@ -91,11 +91,11 @@ const BurgerMenu = () => {
           </a>
         </DropdownMenuItem>
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger className="border-2 bg-dark-gray text-white mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:focus:bg-accent mediaTouch:focus:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground ">
+          <DropdownMenuSubTrigger className="bg-dark-gray text-accent mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:focus:bg-accent mediaTouch:focus:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground ">
             Artists
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
-            <DropdownMenuSubContent className="border-2 bg-dark-gray text-white">
+            <DropdownMenuSubContent className="border-2 bg-dark-gray text-accent">
               {RenderSections()}
             </DropdownMenuSubContent>
           </DropdownMenuPortal>
