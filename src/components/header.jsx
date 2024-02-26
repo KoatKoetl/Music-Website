@@ -10,7 +10,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
@@ -23,17 +23,19 @@ const NavBar = () => {
         <li className="rounded-md px-2 mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
           <a
             href="#main"
-            className="flex h-full items-center text-sm sm:text-base "
+            className="flex h-full items-center text-sm sm:text-base"
           >
             Home
           </a>
         </li>
+
         <li className="flex">
           <DropdownMenu>
             <DropdownMenuTrigger className="rounded-md px-2 text-sm sm:text-base mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
-              Artists
+              <span className="mr-2">Artists</span>{" "}
+              <FontAwesomeIcon icon={faCaretDown} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="mt-2.5 border-2 bg-dark-gray text-white">
+            <DropdownMenuContent className="mt-2.5 border-2 bg-dark-gray text-accent">
               <DropdownMenuLabel>
                 <span className="text-sm sm:text-base">Artist sections</span>
                 <DropdownMenuSeparator />
@@ -42,6 +44,7 @@ const NavBar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </li>
+
         <li className="rounded-md px-2 mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
           <a
             href="#tools"
@@ -77,7 +80,7 @@ const BurgerMenu = () => {
       <DropdownMenuTrigger className="flex items-center justify-center rounded-md px-2 text-sm lil:hidden sm:text-base mediaPointer:hover:bg-accent mediaPointer:hover:text-accent-foreground mediaTouch:active:bg-accent mediaTouch:active:text-accent-foreground">
         <FontAwesomeIcon icon={faBars} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mt-2.5 border-2 bg-dark-gray text-white">
+      <DropdownMenuContent className="mt-2.5 border-2 bg-dark-gray text-accent">
         <DropdownMenuItem>
           {" "}
           <a
