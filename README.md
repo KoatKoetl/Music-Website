@@ -1,4 +1,9 @@
 # Favorite Music Website
+<big><p>This website contain my favorite music. <br> It is simple no-backend website. The purpose of creating this project is to show my skills in React, TailwindCSS frameworks. <br> 
+The Project contain only 2 sections of music and does't have multiple pages. I used the RapidAPI and DeezerAPI to get some data for the website. Also I used a little bit of shadcn/UI kit.<br>
+The site may look weak from a design standpoint, but I'm not a professional designer and spent my time learning programming.
+</p>
+</big>
 
 ## View the website
 
