@@ -7,6 +7,9 @@ export default defineConfig({
   base: "./",
   build: {
     sourcemap: true,
+    rollupOptions: {
+      external: ['/home/stanislav/GitHub_Repositories/Music-Website/src/assets/images/Tools_logo/Deep_logo.png']
+    },
   },
   plugins: [react()],
   test: {
