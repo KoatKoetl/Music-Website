@@ -1,6 +1,6 @@
 import anime from "animejs";
 import React, { useEffect } from "react";
-import guitarImageLogo from "/src/assets/images/Main/guitarStartLogo.webp";
+import guitarImageLogo from "/Main/guitarStartLogo.webp";
 
 const animateTyping = () => {
   let textWrapper = Array.from(document.querySelectorAll(".text-wrapper"));
