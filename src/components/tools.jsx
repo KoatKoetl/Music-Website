@@ -31,7 +31,7 @@ const Tools = () => {
           <li>
             <a href="https://www.deezer.com/en/" target="blank">
               <LazyLoadImage
-{/*                 src={DeezerLogo} */}
+                src=''
                 className="h-3 flex-1 transition-transform lil:h-6 md:h-10  mediaPointer:hover:rotate-12 mediaTouch:active:rotate-12"
               />
             </a>
