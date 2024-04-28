@@ -1,5 +1,5 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import DeezerLogo from "/home/stanislav/GitHub_Repositories/Music-Website/src/assets/images/Tools_logo/Deezer-LOGO.webp";
+// import DeezerLogo from "/home/stanislav/GitHub_Repositories/Music-Website/src/assets/images/Tools_logo/Deezer-LOGO.webp";
 import RapidAPI from "/home/stanislav/GitHub_Repositories/Music-Website/src/assets/images/Tools_logo/RapidAPI_blue_LOGO.webp";
 import ReactLogo from "/home/stanislav/GitHub_Repositories/Music-Website/src/assets/images/Tools_logo/React_LOGO.webp";
 import TailwindCSSLogo from "/home/stanislav/GitHub_Repositories/Music-Website/src/assets/images/Tools_logo/TailwindCSS_LOGO.webp";
@@ -31,7 +31,7 @@ const Tools = () => {
           <li>
             <a href="https://www.deezer.com/en/" target="blank">
               <LazyLoadImage
-                src={DeezerLogo}
+{/*                 src={DeezerLogo} */}
                 className="h-3 flex-1 transition-transform lil:h-6 md:h-10  mediaPointer:hover:rotate-12 mediaTouch:active:rotate-12"
               />
             </a>
