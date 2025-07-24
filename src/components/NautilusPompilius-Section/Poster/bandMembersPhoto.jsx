@@ -1,6 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import bandPhoto from "/band-NautilusPompilius/band-NautilusPompilius.webp";
+import bandPhoto from "/src/assets/band-nautiluspompilius/band-nautiluspompilius.webp";
 
 const BandMembersPhoto = () => {
   // Band Members image props
@@ -9,7 +9,7 @@ const BandMembersPhoto = () => {
     alt: "photo in black and white of band Nautilus Pompilius",
     styles: "justify-self-center rounded-lg",
     effect: "blur",
-    placeholderSrc: "band-NautilusPompilius",
+    placeholderSrc: "band-nautiluspompilius",
   };
 
   return (

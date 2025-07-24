@@ -12,7 +12,7 @@ const Albums = () => {
   // Get all album images links in one array
   const albumCoverURLs = Object.values(
     import.meta.glob(
-      "/band-nautiluspompilius/band-albums/*.{png,jpg,jpeg,PNG,JPEG,webp}",
+      "/src/assets/band-nautiluspompilius/Band-Albums/*.{png,jpg,jpeg,PNG,JPEG,webp}",
       {
         eager: true,
         as: "url",
