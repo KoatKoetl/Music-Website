@@ -1,13 +1,15 @@
 # Favorite Music Website
-<big><p>This website is a order from a customer that wanted to create a simple website to store his music + maybe upgrage it. <br> It is simple no-backend website. I created it as a first model to show how it could look. <br> 
+
+<big><p>This website is a order from a customer that wanted to create a simple website to store his music + maybe upgrage it. <br> It is simple no-backend website. I created it as a first model to show how it could look. <br>
 The Project contain only 2 sections of music and does't have multiple pages. I used the RapidAPI and DeezerAPI to get some data for the website. Also I used a little bit of shadcn/UI kit.<br>
 The design is not the final version, but my client had to change his ideas due to financial issues, so the project stayed that way.
+
 </p>
 </big>
 
 ## View the website
 
-<big><a href="https://koatkoetl.github.io/Music-Website/" target="blank">My favorite music</a></big>
+<big><a href="https://myfavmusic.netlify.app/" target="blank">My favorite music</a></big>
 
 ## Screenshots
 
