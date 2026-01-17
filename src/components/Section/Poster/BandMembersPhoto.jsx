@@ -1,15 +1,16 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import bandPhoto from "/src/assets/band-kino/band-kino.webp";
 
-const BandMembersPhoto = () => {
+const BandMembersPhoto = ({ membersPhoto }) => {
+  const { src, alt, styles, effect, placeholderSrc } = membersPhoto;
+
   // Band Members image props
   const bandPhotoProps = {
-    src: bandPhoto,
-    alt: "photo in black and white of band KINO",
-    styles: "justify-self-center rounded-lg",
-    effect: "blur",
-    placeholderSrc: "band-KINO",
+    src: src,
+    alt: alt,
+    styles: styles,
+    effect: effect,
+    placeholderSrc: placeholderSrc,
   };
 
   return (

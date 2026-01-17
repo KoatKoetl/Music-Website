@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useAPI from "../../useDeezerAPI";
 import ListItem from "./ListItem";
 
@@ -59,8 +59,8 @@ MusicSearch.propTypes = {
   musicArray: PropTypes.array,
 };
 
-const SongList = () => {
-  const { playList, loading } = useAPI("playlist/9677186642");
+const SongList = ({ playlistID }) => {
+  const { playList, loading } = useAPI(`playlist/${playlistID}`);
 
   // Check onLoading
   if (loading) {
