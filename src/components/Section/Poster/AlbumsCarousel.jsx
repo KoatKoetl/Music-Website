@@ -6,35 +6,28 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import PropTypes from "prop-types";
-import CarouselItems from "./carouselItems";
+import CarouselItems from "./CarouselItems";
 
-const Albums = () => {
-  // Get all album images links in one array
-  const albumCoverURLs = Object.values(
-    import.meta.glob(
-      "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/*.{png,jpg,jpeg,PNG,JPEG,webp}",
-      {
-        eager: true,
-        as: "url",
-      },
-    ),
-  );
+const Albums = ({ albums }) => {
+  const { title } = albums;
+
+  const { images, carouselDelay } = albums.albumGallery;
 
   return (
     <div className="w-[210px] p-2 sm:p-4">
       <h4 className="mb-2 text-center text-lg font-semibold lil:text-xl">
-        Albums
+        {title}
       </h4>
 
       <Carousel
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay: carouselDelay,
           }),
         ]}
       >
         <CarouselContent>
-          <CarouselItems albumCoverURLs={albumCoverURLs} />
+          <CarouselItems albumCoverURLs={images} />
         </CarouselContent>
         <CarouselPrevious
           variant="ghost"

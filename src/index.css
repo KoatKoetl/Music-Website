@@ -76,8 +76,10 @@
   }
 }
 
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -91,4 +93,66 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #cacaca;
+}
+
+/* Audio player range inputs */
+.audio-progress-bar,
+.volume-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.audio-progress-bar::-webkit-slider-thumb,
+.volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #1e40af;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.audio-progress-bar::-webkit-slider-thumb:hover,
+.volume-bar::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #60a5fa;
+}
+
+.audio-progress-bar::-moz-range-thumb,
+.volume-bar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #1e40af;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.audio-progress-bar::-moz-range-thumb:hover,
+.volume-bar::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: #60a5fa;
+}
+
+/* Smooth scrolling for the page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

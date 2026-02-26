@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="py-4 text-center">
-        <span>© Copyright 2024</span> <br />
+        <span>© Copyright 2026</span> <br />
         <a
           href="https://github.com/KoatKoetl"
           target="blank"

@@ -1,43 +1,45 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-const LazyAudioPlayer = ({ src, AudioPlayerComponent }) => {
+const LazyAudioPlayer = ({ src, songId, AudioPlayerComponent }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
+    if (!containerRef.current) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasLoaded) {
+          if (entry.isIntersecting) {
             setIsIntersecting(true);
-            setHasLoaded(true);
+            observer.disconnect();
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.1, rootMargin: "50px" },
     );
 
-    const target = document.getElementById(`lazy-audio-${src}`);
-    if (target) {
-      observer.observe(target);
-    }
+    observer.observe(containerRef.current);
 
     return () => observer.disconnect();
-  }, [src, hasLoaded]);
+  }, []);
 
   return (
     <div
-      id={`lazy-audio-${src}`}
+      ref={containerRef}
       className="z-10 my-2 hidden flex-1 flex-wrap justify-center sm:flex"
     >
-      {isIntersecting && <AudioPlayerComponent src={src} />}
+      {isIntersecting && (
+        <AudioPlayerComponent src={src} songId={songId} key={src} />
+      )}
     </div>
   );
 };
 
 LazyAudioPlayer.propTypes = {
   src: PropTypes.string,
+  songId: PropTypes.number,
   AudioPlayerComponent: PropTypes.elementType,
 };
 
