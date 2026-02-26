@@ -85,16 +85,6 @@ const useAudioPlayer = (src, songId) => {
     loadAudio();
   }, [audio, src, getAudioSrc]);
 
-  // Sync with global playing state
-  useEffect(() => {
-    if (songId && audio) {
-      const globalIsPlaying = isGlobalPlaying(songId);
-      if (globalIsPlaying !== isPlaying) {
-        setIsPlaying(globalIsPlaying);
-      }
-    }
-  }, [isGlobalPlaying, songId, audio, isPlaying]);
-
   // Setup event listeners
   useEffect(() => {
     if (!audio) return;
@@ -113,7 +103,6 @@ const useAudioPlayer = (src, songId) => {
     const handleEnded = () => {
       audio.currentTime = 0;
       setIsPlaying(false);
-      // Clear the global playing state so the same song can be played again
       clearPlaying();
     };
 
@@ -186,12 +175,14 @@ const useAudioPlayer = (src, songId) => {
     if (!audio) return;
 
     if (isPlaying) {
+      // Pause the audio and clear global state
       audio.pause();
       setIsPlaying(false);
+      clearPlaying();
     } else {
       // CRITICAL: Stop all other players FIRST, before playing this one
       stopOthers(songId);
-      
+
       // Then play this audio
       audio.play().then(() => {
         setIsPlaying(true);
@@ -201,7 +192,7 @@ const useAudioPlayer = (src, songId) => {
         setIsPlaying(false);
       });
     }
-  }, [audio, isPlaying, songId, stopOthers]);
+  }, [audio, isPlaying, songId, stopOthers, clearPlaying]);
 
   const seek = useCallback((newTime) => {
     if (!audio) return;
