@@ -11,7 +11,7 @@ const Footer = () => {
           Created by KoatKoetl
         </a>
         <br />
-        <span>For contact use - stanislavsuschevici@gmail.com</span>
+        <span>For contact use - <a href="mailto:stanislavsuschevici@gmail.com">stanislavsuschevici@gmail.com</a></span>
       </div>
     </footer>
   );
