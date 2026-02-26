@@ -25,7 +25,7 @@ AlbumCover.propTypes = {
   song: PropTypes.object,
 };
 
-const SongInfo = ({ song }) => {
+const SongInfo = ({ song, bandName }) => {
   return (
     <div className="z-10 flex min-w-[100px] max-w-[300px] flex-1 flex-col justify-center lil:min-w-[250px] sm:min-w-[200px]">
       <h5
@@ -35,10 +35,10 @@ const SongInfo = ({ song }) => {
         {song.title}
       </h5>
       <h6
-        className="text-sm opacity-80 transition-all sm:text-base mediaPointer:hover:opacity-100 mediaTouch:active:opacity-100"
+        className="text-sm opacity-80 sm:text-base"
         aria-label="band name"
       >
-        <span className="font-semibold ">Band: </span>Nautilus Pompilius
+        <span className="font-semibold ">Band: </span>{bandName || song.artist?.name}
       </h6>
     </div>
   );
@@ -46,6 +46,7 @@ const SongInfo = ({ song }) => {
 
 SongInfo.propTypes = {
   song: PropTypes.object,
+  bandName: PropTypes.string,
 };
 
 const FullSongLink = ({ song }) => {
@@ -53,8 +54,9 @@ const FullSongLink = ({ song }) => {
     <div className="z-10 flex flex-1 items-center justify-center sm:px-4 md:flex-none">
       <a
         href={song.link}
-        className="text-center text-sm opacity-80 transition-all sm:text-base mediaPointer:hover:opacity-100 mediaPointer:hover:drop-shadow-font-shadow-2 mediaTouch:active:opacity-100 mediaTouch:active:drop-shadow-font-shadow-2"
+        className="text-center text-sm opacity-80 transition-opacity hover:opacity-100 sm:text-base"
         target="blank"
+        rel="noopener noreferrer"
       >
         <h5>
           <strong>Deezer</strong>
@@ -70,15 +72,16 @@ FullSongLink.propTypes = {
   song: PropTypes.object,
 };
 
-const ListItem = ({ song, index }) => {
+const ListItem = ({ song, index, bandName }) => {
   return (
-    <li className="relative border-b-2 border-dark-blue border-opacity-80 py-1 last:border-none">
-      <div className="flex flex-wrap before:absolute before:z-0 before:h-0 before:w-[1px] before:origin-left before:bg-dark-blue before:transition-all before:duration-700 sm:before:h-[64px] mediaPointer:before:hover:w-full mediaPointer:before:hover:scale-x-[1]">
+    <li className="group relative border-b-2 border-dark-blue border-opacity-80 py-1 last:border-none">
+      <div className="flex flex-wrap transition-colors group-hover:bg-white/5">
         <AlbumCover index={index} song={song} />
-        <SongInfo song={song} />
+        <SongInfo song={song} bandName={bandName} />
         <FullSongLink song={song} />
         <LazyAudioPlayer
           src={song.preview}
+          songId={song.id}
           AudioPlayerComponent={AudioPlayer}
         />
       </div>
@@ -89,6 +92,7 @@ const ListItem = ({ song, index }) => {
 ListItem.propTypes = {
   song: PropTypes.object,
   index: PropTypes.number,
+  bandName: PropTypes.string,
 };
 
 export default ListItem;
