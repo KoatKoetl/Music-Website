@@ -1,3 +1,32 @@
+// KINO band images
+import bandKinoPhoto from "../band-kino/band-kino.webp";
+import kinoAlbum1 from "../band-kino/kino-albums/Chyorny-album.webp";
+import kinoAlbum2 from "../band-kino/kino-albums/Eto-ne-lubovi.webp";
+import kinoAlbum3 from "../band-kino/kino-albums/gruppa-krovi.webp";
+import kinoAlbum4 from "../band-kino/kino-albums/kino-45.webp";
+import kinoAlbum5 from "../band-kino/kino-albums/kino-46.webp";
+import kinoAlbum6 from "../band-kino/kino-albums/nachalnik-kamchatki.webp";
+import kinoAlbum7 from "../band-kino/kino-albums/Noch.webp";
+import kinoAlbum8 from "../band-kino/kino-albums/Posledniy-geroy.webp";
+import kinoAlbum9 from "../band-kino/kino-albums/Zvezda-po-imeni-Solntse.webp";
+
+// Nautilus Pompilius band images
+import bandNautilusPhoto from "../band-nautiluspompilius/band-nautiluspompilius.webp";
+import nautilusAlbum1 from "../band-nautiluspompilius/nautiluspompilius-albums/30Лет.webp";
+import nautilusAlbum2 from "../band-nautiluspompilius/nautiluspompilius-albums/1983_Переезд.webp";
+import nautilusAlbum3 from "../band-nautiluspompilius/nautiluspompilius-albums/1997_Атлантида.webp";
+import nautilusAlbum4 from "../band-nautiluspompilius/nautiluspompilius-albums/Князь_тишины.webp";
+import nautilusAlbum5 from "../band-nautiluspompilius/nautiluspompilius-albums/Наугад.webp";
+import nautilusAlbum6 from "../band-nautiluspompilius/nautiluspompilius-albums/Невидимка.webp";
+import nautilusAlbum7 from "../band-nautiluspompilius/nautiluspompilius-albums/Никомуникабельность.webp";
+import nautilusAlbum8 from "../band-nautiluspompilius/nautiluspompilius-albums/Подъем.webp";
+import nautilusAlbum9 from "../band-nautiluspompilius/nautiluspompilius-albums/Разлука.webp";
+import nautilusAlbum10 from "../band-nautiluspompilius/nautiluspompilius-albums/Раскол.webp";
+import nautilusAlbum11 from "../band-nautiluspompilius/nautiluspompilius-albums/Титаник.webp";
+import nautilusAlbum12 from "../band-nautiluspompilius/nautiluspompilius-albums/ЧеловекБезИмени.webp";
+import nautilusAlbum13 from "../band-nautiluspompilius/nautiluspompilius-albums/Чужая_Земля.webp";
+import nautilusAlbum14 from "../band-nautiluspompilius/nautiluspompilius-albums/ЯблоКитай.webp";
+
 export const bandsData = [
   {
     KINO: {
@@ -11,7 +40,7 @@ export const bandsData = [
           "flex min-w-[250px] max-w-[650px] flex-1 rotate-[20deg] scale-50 transform-gpu flex-col items-center justify-center overflow-hidden bg-dark-gray p-2 shadow-poster transition-all duration-1000 focus-within:rotate-[360deg] focus-within:skew-x-0 focus-within:skew-y-0 focus-within:scale-100 hover:rotate-[360deg] hover:skew-x-0 hover:skew-y-0 hover:scale-100 lil:min-w-[435px] lil:-skew-x-6 lil:-skew-y-12 sm:p-4 md:min-w-[650px]",
         aria_label: "custom made KINO band poster",
         bandMembersPhoto: {
-          src: "/src/assets/band-kino/band-kino.webp",
+          src: bandKinoPhoto,
           alt: "photo in black and white of band KINO",
           effect: "blur",
           styles: "justify-self-center rounded-lg",
@@ -48,15 +77,15 @@ export const bandsData = [
           title: "Albums",
           albumGallery: {
             images: [
-              "/src/assets/band-kino/kino-albums/Chyorny-album.webp",
-              "/src/assets/band-kino/kino-albums/Eto-ne-lubovi.webp",
-              "/src/assets/band-kino/kino-albums/gruppa-krovi.webp",
-              "/src/assets/band-kino/kino-albums/kino-45.webp",
-              "/src/assets/band-kino/kino-albums/kino-46.webp",
-              "/src/assets/band-kino/kino-albums/nachalnik-kamchatki.webp",
-              "/src/assets/band-kino/kino-albums/Noch.webp",
-              "/src/assets/band-kino/kino-albums/Posledniy-geroy.webp",
-              "/src/assets/band-kino/kino-albums/Zvezda-po-imeni-Solntse.webp",
+              kinoAlbum1,
+              kinoAlbum2,
+              kinoAlbum3,
+              kinoAlbum4,
+              kinoAlbum5,
+              kinoAlbum6,
+              kinoAlbum7,
+              kinoAlbum8,
+              kinoAlbum9,
             ],
             carouselDelay: 5000,
           },
@@ -82,7 +111,7 @@ export const bandsData = [
           "lil:skew-y-4 flex min-w-[250px] max-w-[650px] flex-1 -rotate-[20deg] scale-50 transform-gpu flex-col items-center justify-center overflow-hidden bg-gradient-to-t from-[#1e3b7288] via-[#1e3b72b2] to-[#2a529894] p-2 shadow-inversePoster shadow-gray-700 transition-all duration-1000 focus-within:rotate-[360deg] focus-within:skew-x-0 focus-within:skew-y-0 focus-within:scale-100 hover:rotate-[360deg] hover:skew-x-0 hover:skew-y-0 hover:scale-100 lil:min-w-[435px] lil:skew-x-12 sm:p-4 md:min-w-[650px]",
         aria_label: "custom made Nautilus Pompilius band poster",
         bandMembersPhoto: {
-          src: "/src/assets/band-nautiluspompilius/band-nautiluspompilius.webp",
+          src: bandNautilusPhoto,
           alt: "photo in black and white of band Nautilus Pompilius",
           effect: "blur",
           styles: "justify-self-center rounded-lg",
@@ -125,20 +154,20 @@ export const bandsData = [
           title: "Albums",
           albumGallery: {
             images: [
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/30Лет.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/1983_Переезд.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/1997_Атлантида.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Князь_тишины.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Наугад.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Невидимка.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Никомуникабельность.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Подъем.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Разлука.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Раскол.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Титаник.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/ЧеловекБезИмени.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/Чужая_Земля.webp",
-              "/src/assets/band-nautiluspompilius/nautiluspompilius-albums/ЯблоКитай.webp",
+              nautilusAlbum1,
+              nautilusAlbum2,
+              nautilusAlbum3,
+              nautilusAlbum4,
+              nautilusAlbum5,
+              nautilusAlbum6,
+              nautilusAlbum7,
+              nautilusAlbum8,
+              nautilusAlbum9,
+              nautilusAlbum10,
+              nautilusAlbum11,
+              nautilusAlbum12,
+              nautilusAlbum13,
+              nautilusAlbum14,
             ],
             carouselDelay: 5000,
           },
