@@ -12,8 +12,8 @@ const PlayList = ({ playlistData, bandName, onAlbumCoversFetch }) => {
       <h3 className="mb-2 text-center text-3xl font-semibold sm:text-4xl">
         {title}
       </h3>
-      <SongList 
-        playlistID={playlistID} 
+      <SongList
+        playlistID={playlistID}
         bandName={bandName}
         onAlbumCoversFetch={onAlbumCoversFetch}
       />

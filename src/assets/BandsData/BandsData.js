@@ -232,16 +232,7 @@ export const bandsData = [
         albums: {
           title: "Albums",
           albumGallery: {
-            images: [
-              "https://upload.wikimedia.org/wikipedia/en/7/73/Linkin_Park_-_Hybrid_Theory.png",
-              "https://upload.wikimedia.org/wikipedia/en/3/3b/Meteora_cover.png",
-              "https://upload.wikimedia.org/wikipedia/en/6/6a/Minutes_to_Midnight_%28Linkin_Park_album%29.png",
-              "https://upload.wikimedia.org/wikipedia/en/3/3e/Linkin_Park_-_A_Thousand_Suns.png",
-              "https://upload.wikimedia.org/wikipedia/en/0/0d/Living_Things_Linkin_Park.jpg",
-              "https://upload.wikimedia.org/wikipedia/en/9/9f/Linkin_Park_-_The_Hunting_Party.png",
-              "https://upload.wikimedia.org/wikipedia/en/1/13/Linkin_Park_-_One_More_Light.png",
-              "https://upload.wikimedia.org/wikipedia/en/2/23/From_Zero_%28Linkin_Park_album%29.png",
-            ],
+            images: [],
             carouselDelay: 5000,
           },
         },
@@ -305,15 +296,7 @@ export const bandsData = [
         albums: {
           title: "Albums",
           albumGallery: {
-            images: [
-              "https://upload.wikimedia.org/wikipedia/en/0/02/Three_Days_Grace_album.jpg",
-              "https://upload.wikimedia.org/wikipedia/en/2/22/Three_Days_Grace_-_One-X.png",
-              "https://upload.wikimedia.org/wikipedia/en/8/87/Three_Days_Grace_-_Life_Starts_Now.png",
-              "https://upload.wikimedia.org/wikipedia/en/d/d4/Three_Days_Grace_-_Transit_of_Venus.png",
-              "https://upload.wikimedia.org/wikipedia/en/8/8a/Three_Days_Grace_-_Human.jpg",
-              "https://upload.wikimedia.org/wikipedia/en/0/0c/Three_Days_Grace_-_Outsider.jpg",
-              "https://upload.wikimedia.org/wikipedia/en/7/75/Three_Days_Grace_-_Explosions.jpg",
-            ],
+            images: [],
             carouselDelay: 5000,
           },
         },
