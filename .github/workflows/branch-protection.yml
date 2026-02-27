@@ -42,14 +42,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check PR size
-        uses: codelytv/pr-size-checker@v1
+        uses: peter-evans/pull-request-size-checker@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          max_files_changed: '50'
-          max_lines_changed: '500'
-          max_deletions: '200'
-          fail_if_max_files_exceeded: 'false'
-          fail_if_max_lines_exceeded: 'false'
+          max-files-changed: '50'
+          max-lines-changed: '500'
+          max-deletions: '200'
+          fail-on-max-files: 'false'
+          fail-on-max-lines: 'false'
 
   check-secrets:
     name: Check for Leaked Secrets
