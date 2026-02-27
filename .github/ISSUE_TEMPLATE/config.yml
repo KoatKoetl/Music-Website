@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/KoatKoetl/Music-Website#readme
+    about: Check the documentation for setup instructions and FAQs
+  - name: 💬 Discussions
+    url: https://github.com/KoatKoetl/Music-Website/discussions
+    about: Use discussions for questions, ideas, and community conversations
+  - name: 📧 Contact Maintainer
+    url: mailto:YOUR_EMAIL@example.com
+    about: For private inquiries not suitable for public issues

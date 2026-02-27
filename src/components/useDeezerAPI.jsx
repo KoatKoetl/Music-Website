@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import  { useEffect, useState, useCallback } from "react";
 import API_Call from "../utils/API/Deezer_API";
 
 const MAX_RETRIES = 5;

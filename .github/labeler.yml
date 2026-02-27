@@ -1,0 +1,91 @@
+# Labeler configuration for automatic PR labeling
+# Based on files changed in the pull request
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - 'docs/**/*'
+          - 'README.md'
+          - 'CONTRIBUTING.md'
+          - 'CODE_OF_CONDUCT.md'
+          - 'COMMIT_CONVENTION.md'
+          - 'SECURITY.md'
+
+testing:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/tests/**/*'
+          - '**/*.test.jsx'
+          - '**/*.test.js'
+          - '**/*.spec.jsx'
+          - '**/*.spec.js'
+          - '__tests__/**/*'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**/*'
+          - '.github/workflows/**/*'
+          - '.gitlab-ci.yml'
+          - 'netlify.toml'
+          - '.prettierrc'
+          - '.eslintrc.*'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+          - 'pnpm-lock.yaml'
+          - 'yarn.lock'
+
+configuration:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'vite.config.js'
+          - 'tailwind.config.js'
+          - 'tsconfig.json'
+          - 'postcss.config.*'
+          - '.env.example'
+          - '.gitignore'
+          - '.gitattributes'
+
+components:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/components/**/*'
+          - 'src/ui/**/*'
+
+styles:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/styles/**/*'
+          - 'src/index.css'
+          - '**/*.css'
+          - '**/*.scss'
+          - '**/*.sass'
+          - '**/*.less'
+
+utils:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/utils/**/*'
+          - 'src/lib/**/*'
+
+context:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/context/**/*'
+
+assets:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/assets/**/*'
+          - 'public/**/*'
+          - '**/*.png'
+          - '**/*.jpg'
+          - '**/*.jpeg'
+          - '**/*.gif'
+          - '**/*.svg'
+          - '**/*.webp'

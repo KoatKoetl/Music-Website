@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const LazyAudioPlayer = ({ src, songId, AudioPlayerComponent }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
