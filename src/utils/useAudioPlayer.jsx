@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useAudioPlayerContext } from "../context/AudioContext";
 
 const MAX_AUDIO_RETRIES = 3;
@@ -8,7 +8,7 @@ const AUDIO_RETRY_DELAY = 500;
 const CORS_PROXY = "https://api.allorigins.win/raw?url=";
 
 const useAudioPlayer = (src, songId) => {
-  const { registerAudio, unregisterAudio, stopOthers, isPlaying: isGlobalPlaying, clearPlaying } = useAudioPlayerContext();
+  const { registerAudio, unregisterAudio, stopOthers, clearPlaying } = useAudioPlayerContext();
   
   const [audio, setAudio] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -35,7 +35,7 @@ const useAudioPlayer = (src, songId) => {
 
   // Initialize audio (only once per component mount)
   useEffect(() => {
-    if (!src || isInitializedRef.current) return;
+    if (isInitializedRef.current) return;
 
     const newAudio = new Audio();
     newAudio.preload = "metadata";
@@ -116,7 +116,7 @@ const useAudioPlayer = (src, songId) => {
       setRetryCount(0);
     };
 
-    const handleError = (event) => {
+    const handleError = (_event) => {
       const errorCode = audio.error?.code;
       let errorMessage = "Failed to load audio";
 
