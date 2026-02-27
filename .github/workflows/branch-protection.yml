@@ -33,24 +33,6 @@ jobs:
         if: github.event_name == 'pull_request'
         continue-on-error: false
 
-  check-pr-size:
-    name: Check PR Size
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Check PR size
-        uses: peter-evans/pull-request-size-checker@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          max-files-changed: '50'
-          max-lines-changed: '500'
-          max-deletions: '200'
-          fail-on-max-files: 'false'
-          fail-on-max-lines: 'false'
-
   check-secrets:
     name: Check for Leaked Secrets
     runs-on: ubuntu-latest
