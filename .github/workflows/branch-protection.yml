@@ -93,17 +93,19 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: Validate PR body
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          PR_BODY="${{ github.event.pull_request.body }}"
-          if [ -z "$PR_BODY" ] || [ "$PR_BODY" == " " ]; then
+          if [ -z "$PR_BODY" ]; then
             echo "::error::PR description is required"
             exit 1
           fi
-          if [ ${#PR_BODY} -lt 20 ]; then
-            echo "::error::PR description must be at least 20 characters"
+          LENGTH=${#PR_BODY}
+          if [ "$LENGTH" -lt 20 ]; then
+            echo "::error::PR description must be at least 20 characters (got: $LENGTH)"
             exit 1
           fi
-          echo "PR description is valid"
+          echo "✓ PR description is valid ($LENGTH characters)"
 
   label-pr:
     name: Auto Label PR
