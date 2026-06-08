@@ -171,7 +171,7 @@ jobs:
 
       - name: Deploy to Netlify
         id: deploy
-        uses: nwtgck/actions-netlify@v3.0
+        uses: nwtgck/actions-netlify@v4.0
         with:
           publish-dir: './dist'
           production-branch: main
@@ -207,7 +207,7 @@ jobs:
         run: zip -r music-website-${{ github.ref_name }}.zip dist/
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: music-website-${{ github.ref_name }}.zip
           generate_release_notes: true
